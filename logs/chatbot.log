@@ -3226,3 +3226,135 @@ If you provide more specific details about the service or platform, I can give y
 6. **Log In**: Try logging in with your new password to ensure it works.
 
 If you are trying to reset a password for a specific service or device and need more detailed instructions, please provide more information about the service or device, and I can give you more specific guidance.
+2025-03-23 23:49:35,571 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-23 23:49:40,056 - INFO - Use pytorch device_name: cpu
+2025-03-23 23:49:40,056 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-23 23:49:45,400 - ERROR - Error searching FAQs: Embedding dimension 768 does not match collection dimensionality 384
+2025-03-23 23:49:45,668 - ERROR - Failed to initialize ChatGroq: The api_key client option must be set either by passing api_key to the client or by setting the GROQ_API_KEY environment variable
+2025-03-23 23:49:45,668 - ERROR - Error generating response: 'NoneType' object has no attribute 'invoke'
+2025-03-23 23:49:45,668 - INFO - User Query: hi | Bot Response: Sorry, an error occurred.
+2025-03-23 23:52:58,674 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-23 23:53:06,442 - INFO - Use pytorch device_name: cpu
+2025-03-23 23:53:06,442 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-23 23:53:10,391 - ERROR - Error searching FAQs: Embedding dimension 768 does not match collection dimensionality 384
+2025-03-23 23:53:10,737 - ERROR - Failed to initialize ChatGroq: The api_key client option must be set either by passing api_key to the client or by setting the GROQ_API_KEY environment variable
+2025-03-23 23:53:10,738 - ERROR - Error generating response: 'NoneType' object has no attribute 'invoke'
+2025-03-23 23:53:10,738 - INFO - User Query: hello | Bot Response: Sorry, an error occurred.
+2025-03-24 00:01:55,691 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:01:56,007 - INFO - ✅ ChromaDB collection reset successfully.
+2025-03-24 00:02:03,243 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:02:03,243 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:03:49,263 - INFO - ✅ FAQs stored in ChromaDB successfully after reset.
+2025-03-24 00:05:47,679 - ERROR - Failed to initialize ChatGroq: The api_key client option must be set either by passing api_key to the client or by setting the GROQ_API_KEY environment variable
+2025-03-24 00:08:01,328 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:08:05,751 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:08:05,751 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:08:41,576 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:08:41,576 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:08:56,286 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:08:56,286 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:09:51,882 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:09:51,882 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:15:08,335 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:15:12,497 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:15:12,497 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:15:31,900 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:15:31,900 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:16:05,194 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:16:05,194 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:20:18,073 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:20:23,526 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:20:23,526 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:24:56,805 - ERROR - Error storing chat history: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-03-24 00:26:10,247 - ERROR - ❌ Error storing chat history: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-03-24 00:26:58,913 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:26:58,940 - INFO - ✅ Chat stored: {'user': 'Yes', 'bot': 'None', 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 23, 19, 26, 58, 933131), '_id': ObjectId('67e060827d36a493aabee675')}
+2025-03-24 00:28:15,352 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:28:15,436 - INFO - ✅ Chat stored: {'user': 'Thanks my issue reolved', 'bot': 'great', 'sentiment': 'Positive', 'timestamp': datetime.datetime(2025, 3, 23, 19, 28, 15, 434288), '_id': ObjectId('67e060cf2d8a636bc0d10510')}
+2025-03-24 00:28:59,119 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:29:03,242 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:29:03,242 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:29:25,196 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:29:25,196 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:30:51,556 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:30:51,556 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:31:48,620 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:31:52,794 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:31:52,795 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:33:01,716 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:33:01,765 - INFO - ✅ Chat stored: {'user': 'Thanks my issue reolved', 'bot': 'great', 'sentiment': 'Positive', 'timestamp': datetime.datetime(2025, 3, 23, 19, 33, 1, 764751), '_id': ObjectId('67e061ed95bbdb51367615c4')}
+2025-03-24 00:35:00,342 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:35:04,518 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:35:04,518 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:36:56,321 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:37:00,605 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:37:00,605 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:39:55,703 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:40:00,028 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:40:00,029 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:40:06,090 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:40:06,137 - INFO - ✅ Chat stored: {'user': "service is bad my issue did'nt solve", 'bot': '(From FAQ) Following transactions are categorized as service dispute. Transaction declined but funds are debited from the account Amount debited but payment made through an alternate mode Excess amount debited Transaction cancelled but refund from merchant not credited Dual Debits /Duplicate debits for the same merchant, amount, date and time Damaged goods/ Quality of the product or services is not as agreed.', 'sentiment': 'Negative', 'timestamp': datetime.datetime(2025, 3, 23, 19, 40, 6, 136501), '_id': ObjectId('67e06396bf75ff85fbb9959f')}
+2025-03-24 00:40:37,527 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:40:41,841 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:40:41,841 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:40:47,359 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:40:47,371 - INFO - ✅ Chat stored: {'user': 'hello', 'bot': '(From FAQ) When you register for Verified by Visa/ MasterCard SecureCode, you are asked to create a Personal Assurance Message/ Personal Greeting. So when you pay online, always look for your Personal Assurance Message/ Personal Message to ensure that HDFC Bank is authenticating you. View more', 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 23, 19, 40, 47, 370139), '_id': ObjectId('67e063bf93a8f44427c82d5c')}
+2025-03-24 00:41:04,945 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:41:04,945 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:41:09,271 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:41:09,317 - INFO - ✅ Chat stored: {'user': 'fuck bad service', 'bot': '(From FAQ) Following transactions are categorized as service dispute. Transaction declined but funds are debited from the account Amount debited but payment made through an alternate mode Excess amount debited Transaction cancelled but refund from merchant not credited Dual Debits /Duplicate debits for the same merchant, amount, date and time Damaged goods/ Quality of the product or services is not as agreed.', 'sentiment': 'Negative', 'timestamp': datetime.datetime(2025, 3, 23, 19, 41, 9, 316153), '_id': ObjectId('67e063d593a8f44427c82d5e')}
+2025-03-24 00:43:21,032 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:43:25,355 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:43:25,355 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:43:31,819 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:43:32,843 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:43:32,893 - INFO - ✅ Chat stored: {'user': "service is bad my issue did'nt solve", 'bot': "I'm sorry to hear that you're experiencing issues with our service. It sounds like you might be facing a service dispute. Common issues we see include transactions that were declined but funds were still debited from your account, or situations where you've been charged twice for the same purchase. Other disputes can involve goods that arrived damaged or services that didn't meet the agreed-upon quality.\n\nTo help resolve your issue, could you provide more details about what happened? This will help us understand the situation better and assist you more effectively.", 'sentiment': 'Negative', 'timestamp': datetime.datetime(2025, 3, 23, 19, 43, 32, 892073), '_id': ObjectId('67e06464f975fcf5baddb332')}
+2025-03-24 00:44:05,074 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:44:09,329 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:44:09,329 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:44:20,055 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:44:21,068 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:44:21,070 - INFO - ✅ Chat stored: {'user': 'hello', 'bot': "Hello! It looks like you might be looking for information about how to stay secure when making online payments. When you sign up for services like Verified by Visa or MasterCard SecureCode, you get to set up a special message or greeting. This personal message appears when you make an online payment to confirm that you're dealing directly with HDFC Bank and that your transaction is secure. If you have any more questions or need further assistance, feel free to ask!", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 23, 19, 44, 21, 69998), '_id': ObjectId('67e06495b533f6a0cb34e4fd')}
+2025-03-24 00:44:40,416 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:44:40,416 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:44:47,700 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:44:48,622 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:44:48,625 - INFO - ✅ Chat stored: {'user': 'how to reset password?', 'bot': 'Sure, I can help with that! If you need to reset your password, it\'s quite simple. Just head over to our website at www.timespoint.com and look for the "Forgot Password" link, usually found on the login page. Clicking on it will guide you through the process, and we\'ll send a password reset email directly to your registered email address. This email will contain instructions to help you set up a new password. If you have any trouble along the way, feel free to reach out to our support team for assistance!', 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 23, 19, 44, 48, 623959), '_id': ObjectId('67e064b0b533f6a0cb34e4ff')}
+2025-03-24 00:45:38,999 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:45:38,999 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:45:48,220 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:45:49,334 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:45:49,336 - INFO - ✅ Chat stored: {'user': 'How will the OTP be sent to the customers', 'bot': "Your one-time password (OTP) will be delivered directly to your registered mobile number via SMS. This ensures that you receive it quickly and securely. If you haven't received it within a few minutes, please check your spam folder or contact our support for further assistance.", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 23, 19, 45, 49, 335903), '_id': ObjectId('67e064edb533f6a0cb34e501')}
+2025-03-24 00:47:25,605 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:47:36,110 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:47:36,111 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:47:44,141 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:47:45,267 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:47:45,269 - INFO - ✅ Chat stored: {'user': 'hello', 'bot': "Hello! It looks like you might be looking for information about how to stay secure when making online payments. When you sign up for services like Verified by Visa or MasterCard SecureCode, you get to set up a special message or greeting. This personal message appears when you make an online payment to confirm that you're dealing directly with HDFC Bank and that your transaction is secure. If you have any more questions or need further assistance, feel free to ask!", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 23, 19, 47, 45, 268701), '_id': ObjectId('67e06561b4c867da04f147a3')}
+2025-03-24 00:47:45,270 - INFO - User Query: hello | Bot Response: Hello! It looks like you might be looking for information about how to stay secure when making online payments. When you sign up for services like Verified by Visa or MasterCard SecureCode, you get to set up a special message or greeting. This personal message appears when you make an online payment to confirm that you're dealing directly with HDFC Bank and that your transaction is secure. If you have any more questions or need further assistance, feel free to ask!
+2025-03-24 00:48:14,950 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 00:48:21,296 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:48:21,296 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:48:26,371 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:48:27,357 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:48:27,364 - INFO - ✅ Chat stored: {'user': 'How will the OTP be sent to the customers', 'bot': "Your one-time password (OTP) will be delivered directly to your registered mobile number via SMS. This ensures that you receive it quickly and securely. If you haven't received it within a few minutes, please check your spam folder or contact our support for further assistance.", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 23, 19, 48, 27, 362445), '_id': ObjectId('67e0658b2c53aec5fd391b00')}
+2025-03-24 00:48:27,369 - INFO - User Query: How will the OTP be sent to the customers | Bot Response: Your one-time password (OTP) will be delivered directly to your registered mobile number via SMS. This ensures that you receive it quickly and securely. If you haven't received it within a few minutes, please check your spam folder or contact our support for further assistance.
+2025-03-24 00:49:35,624 - INFO - Use pytorch device_name: cpu
+2025-03-24 00:49:35,624 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 00:49:40,573 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:49:41,549 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 00:49:41,594 - INFO - ✅ Chat stored: {'user': 'worst service i have ever used', 'bot': "I'm really sorry to hear that you've had a bad experience. We want to help make it right. You can reach out to our customer care team at 1860 500 1066, or you can email us at [email protected]. They are here to assist you and address any issues you might have. Could you please share more details about what went wrong? This feedback is very important to us for improving our service.", 'sentiment': 'Negative', 'timestamp': datetime.datetime(2025, 3, 23, 19, 49, 41, 593578), '_id': ObjectId('67e065d52c53aec5fd391b02')}
+2025-03-24 00:49:41,594 - INFO - User Query: worst service i have ever used | Bot Response: I'm really sorry to hear that you've had a bad experience. We want to help make it right. You can reach out to our customer care team at 1860 500 1066, or you can email us at [email protected]. They are here to assist you and address any issues you might have. Could you please share more details about what went wrong? This feedback is very important to us for improving our service.
+2025-03-24 02:06:45,384 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 02:06:52,724 - INFO - Use pytorch device_name: cpu
+2025-03-24 02:06:52,724 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 02:07:01,981 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 02:07:02,902 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 02:07:03,414 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 02:07:03,431 - INFO - ✅ Chat stored: {'user': 'hello', 'category': 'other', 'bot': "Hello! It seems like you might be looking for information about how to stay secure when making online payments. When you sign up for services like Verified by Visa or MasterCard SecureCode, you get to set up a special message or greeting. This personal message appears when you're making a payment online, confirming that the transaction is secure and that you're dealing with HDFC Bank. This is a great way to ensure that your transactions are protected. If you need more details or have any other questions, feel free to ask!", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 23, 21, 7, 3, 417487), '_id': ObjectId('67e077f7a72b37b203909769')}
+2025-03-24 02:07:37,657 - INFO - Use pytorch device_name: cpu
+2025-03-24 02:07:37,657 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 02:07:42,327 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 02:07:43,043 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 02:07:43,965 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 02:07:43,975 - INFO - ✅ Chat stored: {'user': 'how can i reset my password?', 'category': 'security', 'bot': 'Sure, I can help guide you through that! If you need to reset your password, simply visit our website at www.timespoint.com. Once there, look for the "Forgot Password" link, usually found near the login section. Click on it, and follow the instructions to have a password reset email sent to your registered email address. This email will contain detailed steps to help you set up a new password. If you haven\'t set up your initial password yet, you should have received an email with instructions on how to do so shortly after signing up. If you can\'t find that email, make sure to check your spam folder as well.', 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 23, 21, 7, 43, 966603), '_id': ObjectId('67e0781fa72b37b20390976b')}
