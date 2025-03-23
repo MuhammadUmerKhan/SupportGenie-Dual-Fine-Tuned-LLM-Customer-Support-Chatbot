@@ -1,23 +1,34 @@
 from datetime import datetime
-import pymongo
-import chromadb
-import dotenv
+import pymongo, chromadb, dotenv, os, sys
 from textblob import TextBlob
-from langchain_huggingface import HuggingFaceEmbeddings
-import config.config as CONFIG
 from langchain_groq import ChatGroq
+from langchain_huggingface import HuggingFaceEmbeddings
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+import config.config as CONFIG
 from logger import get_logger
 
 dotenv.load_dotenv()
 logger = get_logger(__name__)
 
+CATEGORIES = ['security', 'loans', 'accounts', 'insurance', 'investments', 'fundstransfer', 'cards']
+
 def connect_mongo():
-    """Connect to MongoDB."""
+    """Connect to MongoDB and verify connection."""
     try:
         client = pymongo.MongoClient(CONFIG.MONGO_URI)
-        return client[CONFIG.DB_NAME]
+        db = client[CONFIG.DB_NAME]
+
+        # ✅ Debugging Step: Check Connection
+        if db is None:
+            raise Exception("Database object is None.")
+        
+        # ✅ Check if the collection exists
+        if CONFIG.CHAT_HISTORY_COLLECTION not in db.list_collection_names():
+            print(f"❌ Collection '{CONFIG.CHAT_HISTORY_COLLECTION}' does not exist in MongoDB!")
+        
+        return db
     except Exception as e:
-        logger.error(f"MongoDB connection failed: {e}")
+        logger.error(f"❌ MongoDB connection failed: {e}")
         return None
 
 def initialize_chatgroq():
@@ -51,42 +62,126 @@ def search_faq(user_input):
         logger.error(f"Error searching FAQs: {e}")
         return None
 
+def analyze_sentiment(text):
+    """Perform sentiment analysis."""
+    score = TextBlob(text).sentiment.polarity
+    if score > 0:
+        return "Positive"
+    elif score < 0:
+        return "Negative"
+    return "Neutral"
+
+def is_customer_review(user_input):
+    """Use LLM to determine if user input is a review or general inquiry."""
+    prompt = f"""
+    Classify the following user input as either a 'Review' or 'General Inquiry'.
+    A review is an opinion, complaint, or feedback about service quality.
+    A general inquiry is a request for information without an opinion.
+
+    User Input: "{user_input}"
+
+    Respond with ONLY 'Review' or 'General Inquiry'.
+    """
+    
+    response = initialize_chatgroq().invoke(prompt)
+    classification = response.content.strip()
+    
+    return classification == "Review"  # Returns True if classified as a review
+
+# Predefined categories from the dataset
+
+def classify_question_category(user_input):
+    """Use LLM to classify the user question into a predefined category."""
+    prompt = f"""
+    Classify the following user question into one of these categories:
+    {CATEGORIES}
+
+    If the question does not fit into any category, classify it as 'other'.
+
+    User Question: "{user_input}"
+
+    Respond with ONLY the category name.
+    """
+    
+    response = initialize_chatgroq().invoke(prompt)
+    category = response.content.strip().lower()
+    
+    if category not in CATEGORIES:
+        category = "other"  # If LLM returns an unknown category
+    
+    return category
 def store_chat_history(user_input, bot_reply):
-    """Save user queries and bot responses to MongoDB with timestamps."""
+    """Store chat history in MongoDB with explicit None check."""
     try:
         db = connect_mongo()
-        if not db:
-            raise Exception("Database connection failed.")
+        if db is None:  # ✅ Explicitly check if db is None
+            raise Exception("❌ Database connection failed.")
 
         chat_collection = db[CONFIG.CHAT_HISTORY_COLLECTION]
-        chat_collection.insert_one({
+
+        # ✅ Ensure Collection is Retrieved
+        if chat_collection is None:
+            raise Exception(f"❌ Collection '{CONFIG.CHAT_HISTORY_COLLECTION}' not found!")
+
+        # ✅ Use LLM to determine if this is a review
+        is_review = is_customer_review(user_input)
+        sentiment = analyze_sentiment(user_input) if is_review else "Not a Review"
+        category = classify_question_category(user_input)
+        chat_data = {
             "user": user_input,
+            "category": category,
             "bot": bot_reply,
+            "sentiment": sentiment,
             "timestamp": datetime.utcnow()
-        })
-        logger.info(f"Chat history stored: User -> {user_input} | Bot -> {bot_reply}")
+        }
+
+        # ✅ Log chat data before insertion
+        print(f"🔄 Storing chat: {chat_data}")
+
+        # ✅ Insert data
+        chat_collection.insert_one(chat_data)
+        logger.info(f"✅ Chat stored: {chat_data}")
 
     except Exception as e:
-        logger.error(f"Error storing chat history: {e}")
-
-def correct_spelling(text):
-    """Auto-correct spelling mistakes."""
-    return str(TextBlob(text).correct())
+        logger.error(f"❌ Error storing chat history: {e}")
+        print(f"❌ Error storing chat history: {e}")
 
 def get_chatbot_response(user_input):
-    """Generate a response from FAQs or ChatGroq."""
+    """Generate a response by combining FAQ and LLM-generated text for a more natural response."""
     try:
-        user_input = correct_spelling(user_input)
+        print(f"🔍 Processing User Input: {user_input}")
 
         # Step 1: Check ChromaDB for FAQ answer
         faq_answer = search_faq(user_input)
-        if faq_answer:
-            return f"(From FAQ) {faq_answer}"
 
-        # Step 2: If not found, use ChatGroq
+        # Step 2: Initialize ChatGroq LLM
         llm = initialize_chatgroq()
-        response = llm.invoke(user_input)
-        bot_reply = response.content
+        if llm is None:
+            print("❌ ERROR: LLM initialization failed!")
+            return "Sorry, the AI model is unavailable."
+
+        if faq_answer:
+            # 🔹 Instead of returning FAQ directly, ask LLM to **rephrase & enhance** the response
+            prompt = f"""
+            You are an AI assistant providing customer support.
+            A user asked: "{user_input}"
+            We found the following FAQ answer:
+            "{faq_answer}"
+            
+            Rephrase this answer in a more natural, engaging, and helpful way. If additional relevant information can be inferred, include it.
+            """
+            response = llm.invoke(prompt)
+            if response and response.content:
+                bot_reply = response.content
+            else:
+                bot_reply = f"(From FAQ) {faq_answer}"  # Fallback to direct FAQ
+
+        else:
+            # 🔹 If no FAQ match, ask LLM to generate an answer from scratch
+            response = llm.invoke(user_input)
+            bot_reply = response.content if response and response.content else "Sorry, I couldn't find an answer."
+
+        print(f"📝 AI Response: {bot_reply}")  # Debugging log
 
         # Step 3: Store chat history
         store_chat_history(user_input, bot_reply)
@@ -95,6 +190,7 @@ def get_chatbot_response(user_input):
 
     except Exception as e:
         logger.error(f"Error generating response: {e}")
+        print(f"❌ ERROR: {e}")
         return "Sorry, an error occurred."
 
 def main():
@@ -111,3 +207,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # print(get_chatbot_response("service is bad my issue did'nt solve"))
+    # print(store_chat_history("Thanks my issue reolved", "great"))

@@ -1,7 +1,6 @@
 from langchain_huggingface import HuggingFaceEmbeddings
-import chromadb
-import pymongo
-import uuid
+import chromadb, pymongo, uuid, sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import config.config as CONFIG
 from logger import get_logger
 
