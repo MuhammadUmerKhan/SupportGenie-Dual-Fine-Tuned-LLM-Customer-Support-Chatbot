@@ -1,0 +1,10 @@
+streamlit
+fastapi
+uvicorn
+pymongo
+chromadb
+langchain
+huggingface_hub
+textblob
+plotly
+uuid
