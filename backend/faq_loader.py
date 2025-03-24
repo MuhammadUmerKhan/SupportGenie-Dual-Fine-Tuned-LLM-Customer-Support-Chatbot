@@ -1,5 +1,5 @@
-import csv
-import pymongo
+import csv, pymongo, os, sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import config.config as CONFIG
 from logger import get_logger
 
@@ -45,10 +45,12 @@ def load_faq_to_mongo(faq_path):
 
         collection.delete_many({})
         collection.insert_many(faqs)
+        print("✅ FAQs loaded into MongoDB successfully.")
         logger.info("✅ FAQs loaded into MongoDB successfully.")
 
     except Exception as e:
         logger.error(f"Error loading FAQs into MongoDB: {e}")
 
 if __name__ == "__main__":
+    # print(connect_mongo())
     load_faq_to_mongo(CONFIG.FAQ_PATH)
