@@ -2,6 +2,9 @@
 import streamlit as st  # Streamlit for building UI
 from streamlit.logger import get_logger  # Streamlit's built-in logger
 from dotenv import load_dotenv
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_groq import ChatGroq
+import config.config as CONFIG
 load_dotenv()  # ✅ Load environment variables from .env
 
 
@@ -40,6 +43,16 @@ def enable_chat_history(func):
 
     return execute
 
+@st.cache_resource
+def get_cached_llm_response(user_input):
+    """Cache LLM responses to avoid redundant API calls."""
+    llm = ChatGroq(
+        temperature=0,
+        groq_api_key=CONFIG.GROK_API_KEY,
+        model_name="qwen-2.5-32b"
+    )
+    response = llm.invoke(user_input)
+    return response.content.strip()
 
 def display_msg(msg, author):
     """
@@ -63,6 +76,16 @@ def print_qa(cls, question, answer):
     """
     log_str = f"\nUsecase: {cls.__name__}\nQuestion: {question}\nAnswer: {answer}\n" + "-" * 50
     logger.info(log_str)  # Log the interaction using Streamlit's logger
+
+@st.cache_resource
+def configure_vector_embeddings():
+    """
+    Configures and caches the vector embeddings for Groq API.
+
+    Returns:
+        vector_embeddings (HuggingFaceEmbeddings): The loaded vector embeddings.
+    """
+    return HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")  # Load and return the vector embeddings
 
 def sync_st_session():
     """
