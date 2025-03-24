@@ -9,7 +9,7 @@ st.sidebar.title("📌 Navigation")
 page = st.sidebar.radio("Select a Page:", ["📱 Chatbot", "📶 Analytics Dashboard"])
 
 # Route to Selected Page
-if page == "Chatbot":
+if page == "📱 Chatbot":
     chatbot_ui.chatbot()
-elif page == "Analytics Dashboard":
+elif page == "📶 Analytics Dashboard":
     analytics_ui.analytics()
