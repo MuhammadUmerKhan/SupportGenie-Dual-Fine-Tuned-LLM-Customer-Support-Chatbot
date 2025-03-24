@@ -3393,3 +3393,46 @@ This approach not only answers the question but also offers additional support a
 2025-03-24 12:06:47,180 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-24 12:06:47,183 - INFO - ✅ Chat stored: {'user': 'ok, well done, my issue solved, thank you so much', 'category': 'other', 'bot': "If you've updated your mobile number in our system, please enter that number here. If you've recently changed your number, feel free to reach out to our Customer Care Center to update us, ensuring you receive all important notifications.", 'sentiment': 'Positive', 'timestamp': datetime.datetime(2025, 3, 24, 7, 6, 47, 182242), '_id': ObjectId('67e104873b10515f03ad229e')}
 2025-03-24 12:06:47,183 - INFO - User Query: ok, well done, my issue solved, thank you so much | Bot Response: If you've updated your mobile number in our system, please enter that number here. If you've recently changed your number, feel free to reach out to our Customer Care Center to update us, ensuring you receive all important notifications.
+2025-03-24 12:29:42,471 - ERROR - Failed to initialize ChatGroq: module 'config' has no attribute 'GROK_API_KEY'
+2025-03-24 12:33:34,557 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 12:33:40,852 - INFO - Use pytorch device_name: cpu
+2025-03-24 12:33:40,852 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 12:33:48,328 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:33:50,105 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:33:52,252 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:33:52,264 - INFO - ✅ Chat stored: {'user': "service is bad my issue did'nt solve", 'category': 'other', 'bot': "I'm sorry to hear that you're facing issues. It sounds like you might be dealing with a service dispute. Common issues include transactions that were declined but funds were still debited, payments made through alternate modes after a debit, excess amounts debited, transactions canceled without a refund, dual debits, or receiving damaged goods and services not meeting the agreed quality. Could you provide more details about your specific issue so I can assist you better?", 'sentiment': 'Negative', 'timestamp': datetime.datetime(2025, 3, 24, 7, 33, 52, 254232), '_id': ObjectId('67e10ae0ae6b120ae3c50ba4')}
+2025-03-24 12:34:06,432 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 12:34:11,027 - INFO - Use pytorch device_name: cpu
+2025-03-24 12:34:11,027 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 12:34:16,421 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:34:17,534 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:34:18,370 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:34:18,388 - INFO - ✅ Chat stored: {'user': 'hi', 'category': 'other', 'bot': "Hello! We currently don't offer Tele service. For any queries, requests, or complaints, feel free to reach out to us at [email protected]. We're here to help!", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 7, 34, 18, 379417), '_id': ObjectId('67e10afa0b9b4e8e8620f9ac')}
+2025-03-24 12:41:27,290 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 12:41:32,475 - INFO - Use pytorch device_name: cpu
+2025-03-24 12:41:32,475 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 12:41:39,303 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:41:40,440 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:41:41,450 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:41:41,458 - INFO - ✅ Chat stored: {'user': 'hi', 'category': 'other', 'bot': "Hello! Currently, we don't offer a telephone service. For any questions, requests, or concerns, feel free to reach out to us via email at [email protected]. We're here to help!", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 7, 41, 41, 457543), '_id': ObjectId('67e10cb56094e3476bf918ae')}
+2025-03-24 12:42:04,886 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:42:06,346 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:42:07,268 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:42:07,273 - INFO - ✅ Chat stored: {'user': 'i forgot my password, how can i reset it?', 'category': 'security', 'bot': "If you've forgotten your password, don’t worry! Just visit www.timespoint.com and look for the “Forgot Password” link. Click on it, and you’ll receive a password reset email. Follow the instructions in that email to set up a new password. If you need any more help, feel free to ask!", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 7, 42, 7, 272587), '_id': ObjectId('67e10ccf6094e3476bf918b0')}
+2025-03-24 12:51:07,269 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 12:51:11,754 - INFO - Use pytorch device_name: cpu
+2025-03-24 12:51:11,754 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 12:51:43,155 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 12:51:47,381 - INFO - Use pytorch device_name: cpu
+2025-03-24 12:51:47,381 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 12:55:44,122 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 12:55:48,407 - INFO - Use pytorch device_name: cpu
+2025-03-24 12:55:48,407 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 12:55:54,372 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:55:55,497 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:55:56,563 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:55:56,565 - INFO - ✅ Chat stored: {'user': 'hi', 'category': 'other', 'bot': "Hello! We currently don't offer Tele service. For any queries, requests, or complaints, feel free to reach out to us at [email protected]. We're here to help!", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 7, 55, 56, 564696), '_id': ObjectId('67e1100c0a39b81ff19d286e')}
+2025-03-24 12:56:23,376 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:56:24,478 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:56:25,604 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:56:25,608 - INFO - ✅ Chat stored: {'user': 'i forgot my password how can i reset it?', 'category': 'security', 'bot': "If you've forgotten your password, don’t worry! Just visit our website at www.timespoint.com and look for the “Forgot Password” link. Click on it, and we’ll send you a password reset email right away. Follow the instructions in that email to set up a new password. If you need any more help, feel free to ask!", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 7, 56, 25, 607318), '_id': ObjectId('67e110290a39b81ff19d2870')}
