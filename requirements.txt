@@ -1,5 +1,5 @@
 streamlit
-fastapi
+fastapi[all]
 uvicorn
 pymongo
 chromadb
