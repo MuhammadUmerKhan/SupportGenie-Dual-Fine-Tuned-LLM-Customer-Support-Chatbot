@@ -168,7 +168,7 @@ def get_chatbot_response(user_input):
             We found the following FAQ answer:
             "{faq_answer}"
             
-            Rephrase this answer in a more natural, engaging, and helpful way. If additional relevant information can be inferred, include it.
+            Rephrase this answer in a more natural, engaging, and helpful way don't include any extra text. If additional relevant information can be inferred, include it.
             """
             response = llm.invoke(prompt)
             if response and response.content:
