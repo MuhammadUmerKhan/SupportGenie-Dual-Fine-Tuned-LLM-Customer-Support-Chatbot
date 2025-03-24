@@ -3443,3 +3443,28 @@ This approach not only answers the question but also offers additional support a
 2025-03-24 13:00:13,345 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-24 13:00:14,471 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-24 13:00:14,474 - INFO - ✅ Chat stored: {'user': 'hello', 'category': 'other', 'bot': "Hello! When you sign up for Verified by Visa or MasterCard SecureCode, you get to set a special message just for you. This way, when you make an online payment, seeing your unique message confirms that HDFC Bank is securely verifying your transaction. It's a simple step to keep your payments safe and secure.", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 8, 0, 14, 473222), '_id': ObjectId('67e1110e030131927a41e9aa')}
+2025-03-24 15:20:30,833 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 15:20:41,323 - INFO - Use pytorch device_name: cpu
+2025-03-24 15:20:41,323 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 15:20:49,261 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 15:20:52,128 - ERROR - ❌ MongoDB connection failed: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+2025-03-24 15:20:52,128 - ERROR - ❌ Error storing chat history: ❌ Database connection failed.
+2025-03-24 15:31:43,122 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 15:31:53,577 - INFO - Use pytorch device_name: cpu
+2025-03-24 15:31:53,579 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 15:32:02,129 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 15:32:02,151 - ERROR - ❌ MongoDB connection failed: Username and password must be escaped according to RFC 3986, use urllib.parse.quote_plus
+2025-03-24 15:32:02,151 - ERROR - ❌ Error storing chat history: ❌ Database connection failed.
+2025-03-24 15:35:58,613 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 15:36:03,233 - INFO - Use pytorch device_name: cpu
+2025-03-24 15:36:03,233 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 15:36:08,947 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 15:36:08,959 - ERROR - ❌ MongoDB connection failed: Username and password must be escaped according to RFC 3986, use urllib.parse.quote_plus
+2025-03-24 15:36:08,959 - ERROR - ❌ Error storing chat history: ❌ Database connection failed.
+2025-03-24 15:39:13,912 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 15:39:19,372 - INFO - Use pytorch device_name: cpu
+2025-03-24 15:39:19,372 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 15:39:25,836 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 15:39:29,968 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 15:39:30,985 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 15:39:31,114 - INFO - ✅ Chat stored: {'user': "service is bad my issue did'nt solve", 'category': 'other', 'bot': "I'm sorry to hear that you're facing issues. It sounds like you might be dealing with a service dispute. Common issues include transactions that were declined but funds were still debited, payments made through alternate modes when amounts were already debited, excess debits, or refunds not credited after a cancellation. If your issue involves damaged goods or the quality of the product or service not meeting the agreed standards, these are also covered under service disputes. Let's resolve this together. Could you provide more details about what happened?", 'sentiment': 'Negative', 'timestamp': datetime.datetime(2025, 3, 24, 10, 39, 30, 987047), '_id': ObjectId('67e13662cf0d4e37c0abfe08')}
