@@ -214,7 +214,7 @@ def get_chatbot_response(user_input):
         print(f"📝 AI Response: {final_response}")  # Debugging log
 
         # Step 3: Store chat history
-        store_chat_history(translated_input, bot_reply)
+        store_chat_history(user_input, bot_reply)
 
         return final_response
 
