@@ -6,7 +6,7 @@ st.set_page_config(page_title="AI Customer Support System", page_icon="🤖", la
 
 # Sidebar Navigation
 st.sidebar.title("📌 Navigation")
-page = st.sidebar.radio("Select a Page:", ["Chatbot", "Analytics Dashboard"])
+page = st.sidebar.radio("Select a Page:", ["📱 Chatbot", "📶 Analytics Dashboard"])
 
 # Route to Selected Page
 if page == "Chatbot":
