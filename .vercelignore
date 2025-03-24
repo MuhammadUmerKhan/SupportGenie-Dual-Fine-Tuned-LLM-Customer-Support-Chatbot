@@ -6,3 +6,7 @@ chroma_db/
 node_modules/
 venv/
 .env
+logs/
+frontend/
+FAQs/
+config/
