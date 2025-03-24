@@ -3358,3 +3358,38 @@ If you are trying to reset a password for a specific service or device and need 
 2025-03-24 02:07:43,043 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-24 02:07:43,965 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-24 02:07:43,975 - INFO - ✅ Chat stored: {'user': 'how can i reset my password?', 'category': 'security', 'bot': 'Sure, I can help guide you through that! If you need to reset your password, simply visit our website at www.timespoint.com. Once there, look for the "Forgot Password" link, usually found near the login section. Click on it, and follow the instructions to have a password reset email sent to your registered email address. This email will contain detailed steps to help you set up a new password. If you haven\'t set up your initial password yet, you should have received an email with instructions on how to do so shortly after signing up. If you can\'t find that email, make sure to check your spam folder as well.', 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 23, 21, 7, 43, 966603), '_id': ObjectId('67e0781fa72b37b20390976b')}
+2025-03-24 11:56:54,071 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 11:57:01,587 - INFO - Use pytorch device_name: cpu
+2025-03-24 11:57:01,587 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 11:57:10,471 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 11:57:11,597 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 11:57:12,723 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 11:57:12,734 - INFO - ✅ Chat stored: {'user': 'hi', 'category': 'other', 'bot': "Hello! Welcome. It looks like you might be looking for information about our Tele service. Just to let you know, we currently don't offer that specific service. However, I'm here to help! If you have any questions, requests, or feedback, feel free to share them here, or you can reach out to us directly at [email protected]. How can I assist you today?", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 6, 57, 12, 725090), '_id': ObjectId('67e1024852a6056844124754')}
+2025-03-24 11:57:12,735 - INFO - User Query: hi | Bot Response: Hello! Welcome. It looks like you might be looking for information about our Tele service. Just to let you know, we currently don't offer that specific service. However, I'm here to help! If you have any questions, requests, or feedback, feel free to share them here, or you can reach out to us directly at [email protected]. How can I assist you today?
+2025-03-24 11:58:02,039 - INFO - Use pytorch device_name: cpu
+2025-03-24 11:58:02,039 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 11:58:06,693 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 11:58:07,819 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 11:58:08,724 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 11:58:08,729 - INFO - ✅ Chat stored: {'user': 'Can I get finance for insurance and registration', 'category': 'insurance', 'bot': 'Certainly! Here\'s a more engaging way to respond:\n\n"Currently, our financing options cover the ex-showroom price of the vehicle. Insurance and registration fees are additional costs that you would need to arrange separately. However, we can help you explore different ways to manage these expenses or suggest some reliable providers for insurance and registration. Would you like some recommendations?"\n\nThis approach not only answers the question but also offers additional support and assistance.', 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 6, 58, 8, 727728), '_id': ObjectId('67e1028052a6056844124756')}
+2025-03-24 11:58:08,729 - INFO - User Query: Can I get finance for insurance and registration | Bot Response: Certainly! Here's a more engaging way to respond:
+
+"Currently, our financing options cover the ex-showroom price of the vehicle. Insurance and registration fees are additional costs that you would need to arrange separately. However, we can help you explore different ways to manage these expenses or suggest some reliable providers for insurance and registration. Would you like some recommendations?"
+
+This approach not only answers the question but also offers additional support and assistance.
+2025-03-24 11:59:36,586 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 11:59:41,341 - INFO - Use pytorch device_name: cpu
+2025-03-24 11:59:41,341 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 11:59:46,748 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 11:59:47,874 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 11:59:49,000 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 11:59:49,006 - INFO - ✅ Chat stored: {'user': 'What is Guarantor', 'category': 'loans', 'bot': "A Guarantor is someone who promises to cover the debt for another person if they are unable to pay it themselves. This person steps in to fulfill the loan obligations when the primary borrower can't.", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 6, 59, 49, 4177), '_id': ObjectId('67e102e548bda3119c283a42')}
+2025-03-24 11:59:49,007 - INFO - User Query: What is Guarantor | Bot Response: A Guarantor is someone who promises to cover the debt for another person if they are unable to pay it themselves. This person steps in to fulfill the loan obligations when the primary borrower can't.
+2025-03-24 12:06:33,015 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 12:06:38,554 - INFO - Use pytorch device_name: cpu
+2025-03-24 12:06:38,554 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 12:06:45,133 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:06:46,093 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:06:47,180 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 12:06:47,183 - INFO - ✅ Chat stored: {'user': 'ok, well done, my issue solved, thank you so much', 'category': 'other', 'bot': "If you've updated your mobile number in our system, please enter that number here. If you've recently changed your number, feel free to reach out to our Customer Care Center to update us, ensuring you receive all important notifications.", 'sentiment': 'Positive', 'timestamp': datetime.datetime(2025, 3, 24, 7, 6, 47, 182242), '_id': ObjectId('67e104873b10515f03ad229e')}
+2025-03-24 12:06:47,183 - INFO - User Query: ok, well done, my issue solved, thank you so much | Bot Response: If you've updated your mobile number in our system, please enter that number here. If you've recently changed your number, feel free to reach out to our Customer Care Center to update us, ensuring you receive all important notifications.
