@@ -3488,3 +3488,41 @@ This approach not only answers the question but also offers additional support a
 2025-03-24 23:16:46,014 - INFO - ✅ FAQs loaded into MongoDB successfully.
 2025-03-24 23:16:54,665 - INFO - CSV Headers Detected: ['Question', 'Answer', 'Class']
 2025-03-24 23:17:00,846 - INFO - ✅ FAQs loaded into MongoDB successfully.
+2025-03-24 23:40:17,723 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:41:48,316 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:43:41,814 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:44:40,606 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:44:40,646 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 23:44:50,758 - INFO - Use pytorch device_name: cpu
+2025-03-24 23:44:50,758 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 23:44:58,731 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:45:02,727 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:45:04,594 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:45:04,834 - INFO - ✅ Chat stored: {'user': "service is bad my issue did'nt solve", 'category': 'other', 'bot': "I'm sorry to hear about your experience. If your issue involves updating your mobile number in our system, please enter the new number you've registered with us. If you've recently changed your number, feel free to reach out to our Customer Care Center to update your details. They're here to assist you further.", 'sentiment': 'Negative', 'timestamp': datetime.datetime(2025, 3, 24, 18, 45, 4, 596365), '_id': ObjectId('67e1a83048acd2f778672d66')}
+2025-03-24 23:46:48,109 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:46:48,145 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 23:46:52,694 - INFO - Use pytorch device_name: cpu
+2025-03-24 23:46:52,694 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 23:47:00,090 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:47:01,728 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:47:05,312 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:47:06,847 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:47:06,990 - INFO - ✅ Chat stored: {'user': "le service est très mauvais, mon problème n'a pas été résolu", 'category': 'other', 'bot': 'French:\n"Je suis désolé d\'apprendre que vous rencontrez des problèmes. Il semble que vous pourriez faire face à un litige de service, ce qui peut inclure des situations telles qu\'un refus de transaction mais des fonds débités de votre compte, la réception de marchandises endommagées, ou la qualité du produit ou du service ne correspondant pas aux normes convenues. Pourriez-vous me fournir plus de détails sur votre problème spécifique afin que je puisse vous assister au mieux?"', 'sentiment': 'Neutral', 'timestamp': datetime.datetime(2025, 3, 24, 18, 47, 6, 849078), '_id': ObjectId('67e1a8aab4e5a9dede215706')}
+2025-03-24 23:48:22,396 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:48:22,440 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 23:48:28,555 - INFO - Use pytorch device_name: cpu
+2025-03-24 23:48:28,556 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 23:48:34,366 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:48:35,906 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:48:39,322 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:48:40,242 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:48:40,364 - INFO - ✅ Chat stored: {'user': 'The service is very bad, my problem has not been resolved', 'category': 'other', 'bot': 'French:\n"Je suis désolé d\'apprendre que vous rencontrez des problèmes. Il semble que vous pourriez faire face à un litige de service. Cela pourrait inclure des situations comme un refus de transaction mais des fonds débités de votre compte, la réception de marchandises endommagées, ou la qualité du produit ou du service ne correspondant pas à ce qui avait été convenu. Pourriez-vous me fournir plus de détails sur votre problème spécifique afin que je puisse vous aider au mieux?"', 'sentiment': 'Negative', 'timestamp': datetime.datetime(2025, 3, 24, 18, 48, 40, 245057), '_id': ObjectId('67e1a908edb647e69f87f6c9')}
+2025-03-24 23:49:30,832 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:49:30,853 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 23:49:35,707 - INFO - Use pytorch device_name: cpu
+2025-03-24 23:49:35,707 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 23:49:41,686 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:49:43,222 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:49:47,053 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:49:48,036 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 23:49:48,173 - INFO - ✅ Chat stored: {'user': 'The service is very bad, my problem has not been resolved', 'category': 'other', 'bot': "I'm sorry to hear that you're experiencing issues. It sounds like you might be facing a service dispute, which could include situations such as a transaction being declined but funds being debited from your account, receiving damaged goods, or the quality of the product or service not meeting the agreed standards. Could you provide more details about your specific issue so I can assist you better?", 'sentiment': 'Negative', 'timestamp': datetime.datetime(2025, 3, 24, 18, 49, 48, 37592), '_id': ObjectId('67e1a94c272b5ec463f3f053')}
