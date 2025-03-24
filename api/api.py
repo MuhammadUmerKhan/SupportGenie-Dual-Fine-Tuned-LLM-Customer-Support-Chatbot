@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from backend.chatbot import get_chatbot_response
 from fastapi.middleware.cors import CORSMiddleware
 import logging, pymongo, sys, os
+from mangum import Mangum
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import config.config as CONFIG
 
@@ -63,3 +64,6 @@ def get_chat_history():
 @app.get("/")
 def root():
     return {"message": "AI Chatbot API is running!"}
+
+# ✅ Required to make FastAPI work on Vercel's serverless functions
+handler = Mangum(app)
