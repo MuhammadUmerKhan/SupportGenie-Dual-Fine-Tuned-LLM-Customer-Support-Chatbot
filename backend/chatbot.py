@@ -1,10 +1,9 @@
 from datetime import datetime
 import pymongo, chromadb, dotenv, os, sys
 from textblob import TextBlob
-from langchain_groq import ChatGroq
-from langchain_huggingface import HuggingFaceEmbeddings
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import config.config as CONFIG
+import config.utils as utils
 from logger import get_logger
 
 dotenv.load_dotenv()
@@ -34,11 +33,8 @@ def connect_mongo():
 def initialize_chatgroq():
     """Initialize ChatGroq model."""
     try:
-        return ChatGroq(
-            temperature=0,
-            groq_api_key=CONFIG.GROK_API_KEY,
-            model_name=CONFIG.MODEL_NAME
-        )
+        return utils.get_cached_llm_response
+        # return utils.configure_llm()
     except Exception as e:
         logger.error(f"Failed to initialize ChatGroq: {e}")
         return None
@@ -49,18 +45,20 @@ def search_faq(user_input):
         chroma_client = chromadb.PersistentClient(path="./chroma_db")
         collection = chroma_client.get_or_create_collection("faq_embeddings")
         
-        embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+        embedding_model = utils.configure_vector_embeddings()
         user_embedding = embedding_model.embed_query(user_input)
 
+        # ✅ Return only 1 result for faster search
         results = collection.query(query_embeddings=[user_embedding], n_results=1)
 
-        if results and results["ids"] and results["metadatas"][0]:
-            return results["metadatas"][0][0].get("answer", "No answer found in FAQ.")
-        return None  # Ensure it returns None if no match is found
+        if results["ids"] and results["metadatas"][0]:
+            return results["metadatas"][0][0]["answer"]
+        return None
 
     except Exception as e:
         logger.error(f"Error searching FAQs: {e}")
         return None
+
 
 def analyze_sentiment(text):
     """Perform sentiment analysis."""
@@ -83,10 +81,8 @@ def is_customer_review(user_input):
     Respond with ONLY 'Review' or 'General Inquiry'.
     """
     
-    response = initialize_chatgroq().invoke(prompt)
-    classification = response.content.strip()
-    
-    return classification == "Review"  # Returns True if classified as a review
+    response = utils.get_cached_llm_response(prompt)
+    return response == "Review"
 
 # Predefined categories from the dataset
 
@@ -103,13 +99,10 @@ def classify_question_category(user_input):
     Respond with ONLY the category name.
     """
     
-    response = initialize_chatgroq().invoke(prompt)
-    category = response.content.strip().lower()
+    response = utils.get_cached_llm_response(prompt)
     
-    if category not in CATEGORIES:
-        category = "other"  # If LLM returns an unknown category
+    return response if response in CATEGORIES else "other"
     
-    return category
 def store_chat_history(user_input, bot_reply):
     """Store chat history in MongoDB with explicit None check."""
     try:
@@ -154,14 +147,14 @@ def get_chatbot_response(user_input):
         # Step 1: Check ChromaDB for FAQ answer
         faq_answer = search_faq(user_input)
 
-        # Step 2: Initialize ChatGroq LLM
+        # Step 2: Use Cached LLM Response
         llm = initialize_chatgroq()
         if llm is None:
             print("❌ ERROR: LLM initialization failed!")
             return "Sorry, the AI model is unavailable."
 
         if faq_answer:
-            # 🔹 Instead of returning FAQ directly, ask LLM to **rephrase & enhance** the response
+            # 🔹 Use Cached LLM to **rephrase & enhance** the FAQ response
             prompt = f"""
             You are an AI assistant providing customer support.
             A user asked: "{user_input}"
@@ -170,16 +163,11 @@ def get_chatbot_response(user_input):
             
             Rephrase this answer in a more natural, engaging, and helpful way don't include any extra text. If additional relevant information can be inferred, include it.
             """
-            response = llm.invoke(prompt)
-            if response and response.content:
-                bot_reply = response.content
-            else:
-                bot_reply = f"(From FAQ) {faq_answer}"  # Fallback to direct FAQ
+            bot_reply = utils.get_cached_llm_response(prompt)  # ✅ Use cached response
 
         else:
-            # 🔹 If no FAQ match, ask LLM to generate an answer from scratch
-            response = llm.invoke(user_input)
-            bot_reply = response.content if response and response.content else "Sorry, I couldn't find an answer."
+            # 🔹 If no FAQ match, use LLM to generate an answer
+            bot_reply = utils.get_cached_llm_response(user_input)  # ✅ Use cached response
 
         print(f"📝 AI Response: {bot_reply}")  # Debugging log
 
@@ -209,3 +197,4 @@ if __name__ == "__main__":
     main()
     # print(get_chatbot_response("service is bad my issue did'nt solve"))
     # print(store_chat_history("Thanks my issue reolved", "great"))
+    # print(initialize_chatgroq())
