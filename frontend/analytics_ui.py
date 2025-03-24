@@ -33,21 +33,23 @@ def analytics():
         values=sentiment_counts.values,
         title="Customer Sentiment Distribution",
         color=sentiment_counts.index,
-        color_discrete_map={"Positive": "#28a745", "Negative": "#dc3545", "Neutral": "#ffc107"},
+        color_discrete_map={"Positive": "#28a745", "Negative": "#dc3545"},
         hole=0.3
     )
     fig_sentiment_pie.update_traces(textinfo='percent+label', pull=[0.05, 0.05, 0.05])
-    st.plotly_chart(fig_sentiment_pie, use_container_width=True)
+    with st.expander("", expanded=True):
+        st.plotly_chart(fig_sentiment_pie, use_container_width=True)
 
     # 📌 Sentiment Trends Over Time - Enhanced Area Chart
     st.subheader("📈 Sentiment Trends Over Time")
-    df_sentiment_time = df.groupby(df["timestamp"].dt.date)["sentiment"].value_counts().unstack().fillna(0)
-    for sentiment in ["Positive", "Negative", "Neutral"]:
+    df_sentiment = df[df['sentiment'] != "Not a Review"]
+    df_sentiment_time = df_sentiment.groupby(df_sentiment["timestamp"].dt.date)["sentiment"].value_counts().unstack().fillna(0)
+    for sentiment in ["Positive", "Negative"]:
         if sentiment not in df_sentiment_time.columns:
             df_sentiment_time[sentiment] = 0
 
     fig_sentiment_trend = go.Figure()
-    for sentiment, color in zip(["Positive", "Negative", "Neutral"], ["#28a745", "#dc3545", "#ffc107"]):
+    for sentiment, color in zip(["Positive", "Negative"], ["#28a745", "#dc3545"]):
         fig_sentiment_trend.add_trace(go.Scatter(
             x=df_sentiment_time.index, y=df_sentiment_time[sentiment], mode='lines+markers',
             stackgroup='one', name=sentiment, line=dict(color=color)
@@ -59,8 +61,10 @@ def analytics():
         template="plotly_dark",
         hovermode="x"
     )
-    st.plotly_chart(fig_sentiment_trend, use_container_width=True)
+    with st.expander("", expanded=False):
+        st.plotly_chart(fig_sentiment_trend, use_container_width=True)
 
+    st.subheader("📈 Most Frequently Asked Question Categories")
     # 📌 Most Asked FAQs - Advanced Horizontal Bar Chart
     category_counts = df["category"].value_counts()
     fig_category = px.bar(
@@ -73,7 +77,8 @@ def analytics():
     )
 
     fig_category.update_traces(marker=dict(line=dict(width=2, color="black")))
-    st.plotly_chart(fig_category, use_container_width=True)
+    with st.expander("", expanded=False):
+        st.plotly_chart(fig_category, use_container_width=True)
     
     # ====== 📌 User Engagement Heatmap (Hourly) ======
     st.subheader("🔥 User Engagement by Time of Day")
@@ -91,4 +96,5 @@ def analytics():
         yaxis_title="Engagement Level",
         template="plotly_dark"
     )
-    st.plotly_chart(fig_heatmap, use_container_width=True)
+    with st.expander("", expanded=False):
+        st.plotly_chart(fig_heatmap, use_container_width=True)
