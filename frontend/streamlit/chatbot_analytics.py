@@ -14,6 +14,16 @@ def get_chat_history():
     chat_collection = db[CONFIG.CHAT_HISTORY_COLLECTION]
     chat_history = list(chat_collection.find({}, {"_id": 0}))  # Remove MongoDB ID field
     return {"data": chat_history}
+
+def get_faqs():
+    """Fetch FAQs from MongoDB"""
+    db = connect_mongo()
+    if db is None:
+        return {"error": "Database connection failed."}
+    faq_collection = db[CONFIG.FAQ_COLLECTION]
+    faqs = list(faq_collection.find({}, {"_id": 0}))  # Remove MongoDB ID field
+    return {"data": faqs}
+
 def chatbot():
     """Displays the AI Chatbot Interface without API Calls."""
     st.markdown("<h1 style='text-align: center; color: #FFA500;'>💬 AI Customer Support Chatbot</h1>", unsafe_allow_html=True)
@@ -29,8 +39,21 @@ def chatbot():
         bot_response = get_chatbot_response(user_input)  # Call function directly
         utils.display_msg(bot_response, "assistant")  # Store bot's response in chat history
 
-# Function to Run Analytics Dashboard
+# Function to Run FAQ Page
+def faq_page():
+    """Displays the FAQs from the dataset."""
+    st.title("📖 Frequently Asked Questions (FAQs)")
+    faqs_data = get_faqs()
+    if "error" in faqs_data:
+        st.error(faqs_data["error"])
+        st.stop()
+    
+    df_faqs = pd.DataFrame(faqs_data["data"])
+    for index, row in df_faqs.iterrows():
+        with st.expander(f"❓ {row['question']}"):
+            st.write(f"**Answer:** {row['answer']}")
 
+# Function to Run Analytics Dashboard
 def analytics():
     """Displays the AI Analytics Dashboard without API Calls."""
     st.markdown("<h1 style='text-align: center; color: #FFA500;'>💹 AI Customer Support - Analytics Dashboard</h1>", unsafe_allow_html=True)
