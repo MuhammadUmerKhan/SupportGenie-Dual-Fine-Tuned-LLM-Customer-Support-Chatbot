@@ -3475,3 +3475,10 @@ This approach not only answers the question but also offers additional support a
 2025-03-24 16:37:05,257 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-24 16:37:06,281 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-24 16:37:06,573 - INFO - ✅ Chat stored: {'user': 'hi', 'category': 'other', 'bot': "Hello! Currently, we don't offer a telephone service. For any questions, requests, or concerns, feel free to reach out to us via email at [email protected]. We're here to help!", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 11, 37, 6, 284720), '_id': ObjectId('67e143e2d9a6715d2e5bbdfe')}
+2025-03-24 17:15:50,237 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 17:15:58,285 - INFO - Use pytorch device_name: cpu
+2025-03-24 17:15:58,285 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 17:16:05,849 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 17:16:09,485 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 17:16:10,661 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 17:16:10,794 - INFO - ✅ Chat stored: {'user': 'hello', 'category': 'other', 'bot': "Hello! When you sign up for Verified by Visa or MasterCard SecureCode, you get to set a special message just for you. This way, whenever you make an online payment, seeing your unique message confirms that HDFC Bank is securely verifying your transaction. It's a simple step to keep your payments safe and secure.", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 12, 16, 10, 662920), '_id': ObjectId('67e14d0ab0c8a6efee624a56')}
