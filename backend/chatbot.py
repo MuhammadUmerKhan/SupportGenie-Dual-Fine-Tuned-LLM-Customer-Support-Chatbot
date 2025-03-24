@@ -139,13 +139,52 @@ def store_chat_history(user_input, bot_reply):
         logger.error(f"❌ Error storing chat history: {e}")
         print(f"❌ Error storing chat history: {e}")
 
+def detect_language_and_translate(user_input):
+    """Detect the input language and translate it into English if necessary."""
+    prompt = f"""
+    You are a language assistant. Identify the language of the given text and translate it into English if needed.
+
+    User Input: "{user_input}"
+
+    Respond in this format:
+    Language: <Detected Language>
+    Translated: <English Translation>
+    """
+
+    response = utils.get_cached_llm_response(prompt)
+
+    # Extract language & translation
+    lines = response.split("\n")
+    detected_language = lines[0].replace("Language:", "").strip()
+    translated_text = lines[1].replace("Translated:", "").strip()
+
+    return detected_language, translated_text
+
+def translate_back_to_original(text, original_language="English"):
+    """Translate chatbot response back to the original language."""
+    if original_language.lower() == "english":
+        return text  # No translation needed
+
+    prompt = f"""
+    Translate the following English text into {original_language}.
+
+    English: "{text}"
+
+    Translated:
+    """
+
+    return utils.get_cached_llm_response(prompt)
+
 def get_chatbot_response(user_input):
-    """Generate a response by combining FAQ and LLM-generated text for a more natural response."""
+    """Process user input with multilingual support."""
     try:
         print(f"🔍 Processing User Input: {user_input}")
 
+        # Detect language & translate if needed
+        original_language, translated_input = detect_language_and_translate(user_input)
+
         # Step 1: Check ChromaDB for FAQ answer
-        faq_answer = search_faq(user_input)
+        faq_answer = search_faq(translated_input)
 
         # Step 2: Use Cached LLM Response
         llm = initialize_chatgroq()
@@ -157,24 +196,27 @@ def get_chatbot_response(user_input):
             # 🔹 Use Cached LLM to **rephrase & enhance** the FAQ response
             prompt = f"""
             You are an AI assistant providing customer support.
-            A user asked: "{user_input}"
+            A user asked: "{translated_input}"
             We found the following FAQ answer:
             "{faq_answer}"
             
-            Rephrase this answer in a more natural, engaging, and helpful way don't include any extra text. If additional relevant information can be inferred, include it.
+            Rephrase this answer in a more natural, engaging, and helpful way without including extra text. If additional relevant information can be inferred, include it.
             """
             bot_reply = utils.get_cached_llm_response(prompt)  # ✅ Use cached response
 
         else:
             # 🔹 If no FAQ match, use LLM to generate an answer
-            bot_reply = utils.get_cached_llm_response(user_input)  # ✅ Use cached response
+            bot_reply = utils.get_cached_llm_response(translated_input)  # ✅ Use cached response
 
-        print(f"📝 AI Response: {bot_reply}")  # Debugging log
+        # Translate response back to original language
+        final_response = translate_back_to_original(bot_reply, original_language)
+
+        print(f"📝 AI Response: {final_response}")  # Debugging log
 
         # Step 3: Store chat history
-        store_chat_history(user_input, bot_reply)
+        store_chat_history(translated_input, bot_reply)
 
-        return bot_reply
+        return final_response
 
     except Exception as e:
         logger.error(f"Error generating response: {e}")
@@ -194,7 +236,10 @@ def main():
         print(f"Bot: {response}")
 
 if __name__ == "__main__":
-    # main()
-    print(get_chatbot_response("service is bad my issue did'nt solve"))
+    main()
+    # print(get_chatbot_response("service is bad my issue did'nt solve"))
+    # print(get_chatbot_response("le service est très mauvais, mon problème n'a pas été résolu")) # service is very bad, my issue did'nt resolve
     # print(store_chat_history("Thanks my issue reolved", "great"))
     # print(initialize_chatgroq())
+    # print(detect_language_and_translate("comment vas-tu?"))
+    # print(translate_back_to_original("comment vas-tu?"))
