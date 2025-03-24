@@ -62,29 +62,44 @@ def analytics():
     with st.expander("", expanded=True):
         st.plotly_chart(fig_sentiment_pie, use_container_width=True)
 
-    # 📌 Sentiment Trends Over Time - Enhanced Area Chart
     st.subheader("📈 Sentiment Trends Over Time")
+
     df_sentiment = df[df['sentiment'] != "Not a Review"]
-    df_sentiment_time = df_sentiment.groupby(df_sentiment["timestamp"].dt.date)["sentiment"].value_counts().unstack().fillna(0)
-    for sentiment in ["Positive", "Negative"]:
+    df_sentiment["timestamp"] = pd.to_datetime(df_sentiment["timestamp"])
+    df_sentiment["year_month"] = df_sentiment["timestamp"].dt.to_period("M")
+    df_sentiment_time = df_sentiment.groupby(["year_month", "sentiment"]).size().unstack(fill_value=0)
+
+    for sentiment in ["Positive", "Negative", "Neutral"]:
         if sentiment not in df_sentiment_time.columns:
             df_sentiment_time[sentiment] = 0
 
+    # ✅ Create Plotly Figure
     fig_sentiment_trend = go.Figure()
-    for sentiment, color in zip(["Positive", "Negative"], ["#28a745", "#dc3545"]):
+    colors = {"Positive": "#28a745", "Negative": "#dc3545", "Neutral": "#FFA500"}  # Added Neutral color
+
+    for sentiment in ["Positive", "Negative", "Neutral"]:
         fig_sentiment_trend.add_trace(go.Scatter(
-            x=df_sentiment_time.index, y=df_sentiment_time[sentiment], mode='lines+markers',
-            stackgroup='one', name=sentiment, line=dict(color=color)
+            x=df_sentiment_time.index.astype(str),  # Convert Period Index to String
+            y=df_sentiment_time[sentiment],
+            mode='lines+markers',
+            stackgroup='one',
+            name=sentiment,
+            line=dict(color=colors[sentiment])
         ))
 
+    # ✅ Update Layout for Readability
     fig_sentiment_trend.update_layout(
         title="Sentiment Trends Over Time",
-        xaxis_title="Date", yaxis_title="Count",
+        xaxis_title="Year-Month",
+        yaxis_title="Sentiment Count",
         template="plotly_dark",
         hovermode="x"
     )
+
+    # ✅ Display Chart
     with st.expander("", expanded=False):
         st.plotly_chart(fig_sentiment_trend, use_container_width=True)
+
 
     st.subheader("📈 Most Frequently Asked Question Categories")
     # 📌 Most Asked FAQs - Advanced Horizontal Bar Chart
