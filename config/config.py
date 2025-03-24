@@ -7,5 +7,5 @@ MODEL_NAME = "qwen-2.5-32b"
 FAQ_PATH = "./FAQS/BankFAQs.csv"
 DB_NAME = "chatbotDB"
 FAQ_COLLECTION = "faqs"
-MONGO_URI = "mongodb://localhost:27017/"
+MONGO_URI = os.getenv("MONGO_URI")
 CHAT_HISTORY_COLLECTION = "chat_history"
