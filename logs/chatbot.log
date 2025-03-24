@@ -3482,3 +3482,9 @@ This approach not only answers the question but also offers additional support a
 2025-03-24 17:16:09,485 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-24 17:16:10,661 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-24 17:16:10,794 - INFO - ✅ Chat stored: {'user': 'hello', 'category': 'other', 'bot': "Hello! When you sign up for Verified by Visa or MasterCard SecureCode, you get to set a special message just for you. This way, whenever you make an online payment, seeing your unique message confirms that HDFC Bank is securely verifying your transaction. It's a simple step to keep your payments safe and secure.", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 12, 16, 10, 662920), '_id': ObjectId('67e14d0ab0c8a6efee624a56')}
+2025-03-24 23:15:03,804 - INFO - CSV Headers Detected: ['Question', 'Answer', 'Class']
+2025-03-24 23:15:10,950 - INFO - ✅ FAQs loaded into MongoDB successfully.
+2025-03-24 23:16:38,770 - INFO - CSV Headers Detected: ['Question', 'Answer', 'Class']
+2025-03-24 23:16:46,014 - INFO - ✅ FAQs loaded into MongoDB successfully.
+2025-03-24 23:16:54,665 - INFO - CSV Headers Detected: ['Question', 'Answer', 'Class']
+2025-03-24 23:17:00,846 - INFO - ✅ FAQs loaded into MongoDB successfully.
