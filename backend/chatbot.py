@@ -194,7 +194,7 @@ def main():
         print(f"Bot: {response}")
 
 if __name__ == "__main__":
-    main()
-    # print(get_chatbot_response("service is bad my issue did'nt solve"))
+    # main()
+    print(get_chatbot_response("service is bad my issue did'nt solve"))
     # print(store_chat_history("Thanks my issue reolved", "great"))
     # print(initialize_chatgroq())
