@@ -3436,3 +3436,10 @@ This approach not only answers the question but also offers additional support a
 2025-03-24 12:56:24,478 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-24 12:56:25,604 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-24 12:56:25,608 - INFO - ✅ Chat stored: {'user': 'i forgot my password how can i reset it?', 'category': 'security', 'bot': "If you've forgotten your password, don’t worry! Just visit our website at www.timespoint.com and look for the “Forgot Password” link. Click on it, and we’ll send you a password reset email right away. Follow the instructions in that email to set up a new password. If you need any more help, feel free to ask!", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 7, 56, 25, 607318), '_id': ObjectId('67e110290a39b81ff19d2870')}
+2025-03-24 13:00:01,832 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-24 13:00:06,311 - INFO - Use pytorch device_name: cpu
+2025-03-24 13:00:06,311 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-24 13:00:12,218 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 13:00:13,345 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 13:00:14,471 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-24 13:00:14,474 - INFO - ✅ Chat stored: {'user': 'hello', 'category': 'other', 'bot': "Hello! When you sign up for Verified by Visa or MasterCard SecureCode, you get to set a special message just for you. This way, when you make an online payment, seeing your unique message confirms that HDFC Bank is securely verifying your transaction. It's a simple step to keep your payments safe and secure.", 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 24, 8, 0, 14, 473222), '_id': ObjectId('67e1110e030131927a41e9aa')}
