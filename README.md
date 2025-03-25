@@ -189,8 +189,20 @@ pip install -r requirements.txt
 - Create a **MongoDB Atlas** cluster.
 - Add your **connection string** to `.env` file:
 ```ini
-MONGO_URI=mongodb+srv://your_user:your_password@cluster.mongodb.net/chatbotDB
+MONGO_USER=your_mongodb_username  # (Find in MongoDB Atlas under Database Access)
+MONGO_PASSWORD=your_mongodb_password  # (Set while creating the database user)
+MONGO_CLUSTER=your_cluster.mongodb.net  # (Find in MongoDB Atlas under Cluster Overview)
+MONGO_DB=chatbotDB  # (Set database name, default: chatbotDB)
+MONGO_URI=mongodb+srv://your_user:your_password@your_cluster.mongodb.net/chatbotDB?retryWrites=true&w=majority&appName=Cluster0
 ```
+### **4️⃣ Set Up API Keys**
+- **Grok API Key** (For LLM-powered responses):
+```ini
+GROK_API_KEY=your_grok_api_key  # (Obtain from Groq API Dashboard)
+```
+
+Update `.env` with your **MongoDB credentials and API Key** before running the chatbot.
+
 
 ### **4️⃣ Run the Streamlit App**
 ```bash
