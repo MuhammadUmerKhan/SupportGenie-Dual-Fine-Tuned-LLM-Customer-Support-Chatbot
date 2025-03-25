@@ -82,18 +82,18 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 ## 🔁 **LLM Functionality**
 
 ### **1️⃣ Understanding User Input**
-- 🔹 Detects **language** and **query intent**
+- Detects **language** and **query intent**
 
 ### **2️⃣ Classifying Questions**
-- 🔹 Determines **category (e.g., Loans, Security, Payments, etc.)**
+- Determines **category (e.g., Loans, Security, Payments, etc.)**
 
 ### **3️⃣ Retrieving Answers**
-- 🔹 Searches **FAISS database** for relevant FAQ answers
-- 🔹 If no match is found, generates a response **using LLM**
+- Searches **FAISS database** for relevant FAQ answers
+- If no match is found, generates a response **using LLM**
 
 ### **4️⃣ Sentiment Analysis & Storage**
-- 🔹 Predicts **user sentiment** (Positive, Negative, Neutral)
-- 🔹 Stores **chat history & feedback** in MongoDB
+- Predicts **user sentiment** (Positive, Negative, Neutral)
+- Stores **chat history & feedback** in MongoDB
 
 ---
 
@@ -246,13 +246,13 @@ docker run -p 8501:8501 ai-customer-support
 ---
 
 ## 🛠️ **Future Improvements**
-- 🔹 **User Sessions** → Recognize returning users.
-- 🔹 **Advanced LLM Fine-Tuning** → Improve chatbot responses.
-- 🔹 **Voice Interaction** → Convert text-based chatbot into a **voice assistant**.
-- 🔹 **Voice-Enabled Chatbot** – Integrate **speech recognition** for voice queries.  
-- 🔹 **WhatsApp & Telegram Integration** – Expand support to messaging apps.  
-- 🔹 **Advanced Sentiment Analysis** – Use transformer models for better predictions.  
-- 🔹 **Proactive Support Suggestions** – Predict user needs based on chat history.  
+- **User Sessions** → Recognize returning users.
+- **Advanced LLM Fine-Tuning** → Improve chatbot responses.
+- **Voice Interaction** → Convert text-based chatbot into a **voice assistant**.
+- **Voice-Enabled Chatbot** – Integrate **speech recognition** for voice queries.  
+- **WhatsApp & Telegram Integration** – Expand support to messaging apps.  
+- **Advanced Sentiment Analysis** – Use transformer models for better predictions.  
+- **Proactive Support Suggestions** – Predict user needs based on chat history.  
 
 ---
 
