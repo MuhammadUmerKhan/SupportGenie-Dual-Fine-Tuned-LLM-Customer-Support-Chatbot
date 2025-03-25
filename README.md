@@ -4,7 +4,7 @@
 The **AI-Powered Customer Support System** is designed to provide **automated customer assistance** by leveraging **Large Language Models (LLMs), sentiment analysis, and an FAQ-based knowledge base**. This system aims to improve customer interactions by providing **quick, accurate, and relevant responses** while also offering **analytical insights** into user behavior and common queries.
 
 ### 💡 **Why This Project?**
-- ✅ **AI-Powered FAQ Retrieval**: Uses **ChromaDB** to fetch answers from FAQs.
+- ✅ **AI-Powered FAQ Retrieval**: Uses **FAISS** to fetch answers from FAQs.
 - ✅ **Sentiment Analysis**: Classifies customer feedback as **Positive, Negative, or Neutral**.
 - ✅ **Multilingual Support**: Detects and translates queries into English before processing.
 - ✅ **User Interaction Insights**: Tracks **most asked questions, sentiment trends, and user behavior**.
@@ -19,7 +19,7 @@ AI-Powered-Customer-Support-System/
 ├── 📂 backend/               # Backend Logic & Core Processing
 │   ├── chatbot.py           # Core Chatbot Logic (LLM, FAQ Retrieval, Sentiment Analysis)
 │   ├── faq_loader.py        # Loads FAQ Data into MongoDB
-│   ├── vector_db.py         # ChromaDB for FAQ Embeddings
+│   ├── vector_db.py         # FAISS for FAQ Embeddings
 │
 ├── 📂 frontend/              # Streamlit UI Components
 │   ├── chatbot_ui.py        # Chatbot Interface
@@ -30,7 +30,7 @@ AI-Powered-Customer-Support-System/
 │   ├── BankFAQs.csv         # Raw FAQ Dataset
 │   ├── processed_faqs.json  # Preprocessed FAQ Data
 │
-├── 📂 chroma_db/             # ChromaDB Storage for FAQ Retrieval
+├── 📂 faiss_db/             # FAISS Storage for FAQ Retrieval
 │
 ├── 📂 api/                   # API Services
 │   ├── api.py               # FastAPI Backend (Optional)
@@ -91,7 +91,7 @@ streamlit run main.py
 ## 📊 **Features & Functionality**
 
 ### **1️⃣ AI Chatbot 💬**
-- Retrieves answers from FAQs using **ChromaDB**.
+- Retrieves answers from FAQs using **FAISS**.
 - If no match is found, generates AI responses via **LLM**.
 - Detects and translates non-English queries before processing.
 - **Collects user feedback** for response improvement.

@@ -37,7 +37,7 @@ This folder ensures smooth project execution by managing **API keys, database co
 **Key Features:**
 - **Chat History Management:** Loads and stores previous chatbot interactions.
 - **Language Processing:** Detects user input language and translates queries (for multilingual support 🌍).
-- **Vector Embedding Handling:** Helps in processing **FAQ embeddings** for ChromaDB.
+- **Vector Embedding Handling:** Helps in processing **FAQ embeddings** for FAISS DB.
 - **Logging & Debugging Tools:** Simplifies tracking errors and debugging processes.
 
 ---

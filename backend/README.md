@@ -12,7 +12,7 @@ This folder manages the **chatbot's logic, data storage, and retrieval mechanism
 - Implements **sentiment analysis** and **question categorization**.
 
 **Key Features:**
-- **FAQ-Based Answer Retrieval:** Queries ChromaDB for relevant FAQs.
+- **FAQ-Based Answer Retrieval:** Queries FAISS DB for relevant FAQs.
 - **LLM-Generated Responses:** Uses AI to generate answers when an FAQ match is unavailable.
 - **Sentiment Analysis:** Classifies user feedback as Positive, Negative, or Neutral.
 - **Category Classification:** Assigns each question to predefined categories (e.g., security, loans, accounts).
@@ -34,15 +34,15 @@ This folder manages the **chatbot's logic, data storage, and retrieval mechanism
 
 ---
 
-### 3️⃣ **vector_db.py** (🔍 ChromaDB for FAQ Retrieval)
+### 3️⃣ **vector_db.py** (🔍 FAISS DB for FAQ Retrieval)
 **Purpose:**
 - Stores and retrieves **vector embeddings** of FAQ questions for fast and accurate matching.
-- Uses **ChromaDB** as a **vector database** for semantic search.
+- Uses **FAISS DB** as a **vector database** for semantic search.
 
 **Key Features:**
 - **Embeddings Generation:** Converts FAQ questions into numerical representations using **Hugging Face Embeddings**.
 - **Efficient Search Mechanism:** Retrieves the most relevant FAQ based on similarity scores.
-- **ChromaDB Integration:** Provides a **persistent** and **scalable** storage solution for embeddings.
+- **FAISS DB Integration:** Provides a **persistent** and **scalable** storage solution for embeddings.
 - **Automatic Updates:** Ensures the database stays updated when new FAQs are added.
 
 ---
@@ -51,7 +51,7 @@ This folder manages the **chatbot's logic, data storage, and retrieval mechanism
 The **backend** folder powers the AI chatbot, ensuring **fast and accurate responses** using **FAQs, AI models, and database storage**.
 - **`chatbot.py` →** Manages AI logic, sentiment analysis, and response generation.
 - **`faq_loader.py` →** Loads and processes FAQ data into MongoDB.
-- **`vector_db.py` →** Handles FAQ embeddings and semantic search using ChromaDB.
+- **`vector_db.py` →** Handles FAQ embeddings and semantic search using FAISS DB.
 
 Together, these components create a **scalable and intelligent** AI customer support system. 🚀
 
