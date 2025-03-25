@@ -1,5 +1,5 @@
 from datetime import datetime
-import pymongo, chromadb, dotenv, os, sys
+import pymongo, dotenv, os, sys, numpy as np, json, faiss
 from textblob import TextBlob
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import config.config as CONFIG
@@ -10,6 +10,11 @@ dotenv.load_dotenv()
 logger = get_logger(__name__)
 
 CATEGORIES = ['security', 'loans', 'accounts', 'insurance', 'investments', 'fundstransfer', 'cards']
+
+# Define FAISS storage paths
+FAISS_DB_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "faiss_db"))
+FAISS_INDEX_FILE = os.path.join(FAISS_DB_PATH, "faiss_index.bin")
+FAISS_METADATA_FILE = os.path.join(FAISS_DB_PATH, "faiss_metadata.json")
 
 def connect_mongo():
     """Connect to MongoDB and verify connection."""
@@ -40,23 +45,45 @@ def initialize_chatgroq():
         return None
 
 def search_faq(user_input):
-    """Search for the most relevant FAQ using ChromaDB."""
+    """Search for the most relevant FAQ using FAISS."""
     try:
-        chroma_client = chromadb.PersistentClient(path="./chroma_db", settings={"chroma_db_impl": "duckdb"})
-        collection = chroma_client.get_or_create_collection("faq_embeddings")
+        # Ensure FAISS index and metadata exist before loading
+        if not os.path.exists(FAISS_INDEX_FILE) or not os.path.exists(FAISS_METADATA_FILE):
+            logger.error("FAISS index or metadata file not found.")
+            return None
+
+        # Load FAISS index
+        index = faiss.read_index(FAISS_INDEX_FILE)
         
+        # Load metadata
+        with open(FAISS_METADATA_FILE, "r") as f:
+            answers = json.load(f)  # Ensure this is a list of FAQs
+
+        # Convert metadata keys to a list (for indexing)
+        faq_questions = list(answers.keys()) if isinstance(answers, dict) else list(answers)
+
+        # Generate embedding for user query
         embedding_model = utils.configure_vector_embeddings()
         user_embedding = embedding_model.embed_query(user_input)
+        user_embedding = np.array(user_embedding).astype('float32').reshape(1, -1)
 
-        # ✅ Return only 1 result for faster search
-        results = collection.query(query_embeddings=[user_embedding], n_results=1)
+        # Perform FAISS search
+        distances, indices = index.search(user_embedding, 1)
 
-        if results["ids"] and results["metadatas"][0]:
-            return results["metadatas"][0][0]["answer"]
-        return None
+        # Handle case where no valid match is found
+        if indices[0][0] == -1 or indices[0][0] >= len(faq_questions):
+            logger.info("No relevant FAQ match found.")
+            return None
+
+        # Retrieve matched question and its answer
+        question_matched = faq_questions[indices[0][0]]
+        answer = answers.get(question_matched, "No answer found.") if isinstance(answers, dict) else answers[indices[0][0]]
+        
+        logger.info("✅ Answer Loaded Successfully")
+        return answer
 
     except Exception as e:
-        logger.error(f"Error searching FAQs: {e}")
+        logger.error(f"❌ Error searching FAQs: {e}")
         return None
 
 
@@ -237,9 +264,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # print(search_faq("How to reset Password?"))
+    # print(FAISS_DB_PATH, FAISS_INDEX_FILE, FAISS_METADATA_FILE)
     # print(get_chatbot_response("service is bad my issue did'nt solve"))
     # print(get_chatbot_response("le service est très mauvais, mon problème n'a pas été résolu")) # service is very bad, my issue did'nt resolve
     # print(store_chat_history("Thanks my issue reolved", "great"))
     # print(initialize_chatgroq())
     # print(detect_language_and_translate("comment vas-tu?"))
     # print(translate_back_to_original("comment vas-tu?"))
+    # print(FAISS_METADATA_FILE)

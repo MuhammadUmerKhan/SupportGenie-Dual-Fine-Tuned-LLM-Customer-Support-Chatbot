@@ -1,14 +1,21 @@
-import chromadb
-import pymongo
-import uuid 
-import sys
-import os
+import pymongo, faiss, uuid, sys, os, numpy as np, json
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import config.config as CONFIG
 import config.utils as utils
 from logger import get_logger
 
 logger = get_logger(__name__)
+
+# Define FAISS directory path
+FAISS_DB_PATH = os.path.join(os.path.dirname(__file__), "../faiss_db")
+FAISS_INDEX_FILE = os.path.join(FAISS_DB_PATH, "faiss_index.bin")
+FAISS_METADATA_FILE = os.path.join(FAISS_DB_PATH, "faiss_metadata.json")
+
+def ensure_faiss_db_directory():
+    """Ensure that the FAISS database directory exists."""
+    if not os.path.exists(FAISS_DB_PATH):
+        os.makedirs(FAISS_DB_PATH)
+        logger.info(f"✅ Created FAISS DB directory: {FAISS_DB_PATH}")
 
 def connect_mongo():
     """Connect to MongoDB."""
@@ -23,85 +30,67 @@ def connect_mongo():
         return None
 
 def load_faqs_from_mongo():
-    """Retrieve FAQs from MongoDB with indexing for speed."""
+    """Retrieve FAQs from MongoDB."""
     try:
         db = connect_mongo()
         if db is None:
-            raise Exception("Database connection failed.")
+            raise Exception("❌ Database connection failed.")
 
-        # ✅ Ensure an index is created on the 'question' field
-        db[CONFIG.FAQ_COLLECTION].create_index("question")
-
+        db[CONFIG.FAQ_COLLECTION].create_index("question")  # Ensure index
         faqs = list(db[CONFIG.FAQ_COLLECTION].find({}, {"_id": 0, "question": 1, "answer": 1}))
 
         if not faqs:
-            raise Exception("No FAQs found in MongoDB.")
+            raise Exception("❌ No FAQs found in MongoDB.")
         
         return faqs
-
     except Exception as e:
-        logger.error(f"Error loading FAQs from MongoDB: {e}")
+        logger.error(f"❌ Error loading FAQs from MongoDB: {e}")
         return []
 
-def reset_chroma_db():
-    """Delete existing ChromaDB collection to reset the database."""
+def reset_faiss_db():
+    """Reset FAISS index and metadata."""
     try:
-        chroma_client = chromadb.PersistentClient(
-                path="./chroma_db",
-                settings={"chroma_db_impl": "duckdb"}
-            )
-
-        chroma_client.delete_collection("faq_embeddings")  # ✅ Delete old collection
-        logger.info("✅ ChromaDB collection reset successfully.")
+        index = faiss.IndexFlatL2(768)  # Assuming 768-dimension embeddings
+        faiss.write_index(index, FAISS_INDEX_FILE)
+        with open(FAISS_METADATA_FILE, "w") as f:
+            json.dump({}, f)  # Reset metadata file
+        logger.info("✅ FAISS index reset successfully.")
     except Exception as e:
-        logger.error(f"Error resetting ChromaDB: {e}")
+        logger.error(f"❌ Error resetting FAISS: {e}")
 
-def store_faqs_in_chroma():
-    """Store ONLY new FAQ embeddings in ChromaDB."""
+def store_faqs_in_faiss():
+    """Store FAQ embeddings in FAISS."""
     try:
-        chroma_client = chromadb.PersistentClient(
-                path="./chroma_db",
-                settings={"chroma_db_impl": "duckdb"}
-            )
-        collection = chroma_client.get_or_create_collection("faq_embeddings")
+        db = connect_mongo()
+        if db is None:
+            raise Exception("❌ Database connection failed.")
 
         # Load FAQ Data
         faqs = load_faqs_from_mongo()
         if not faqs:
-            raise Exception("No FAQs found in MongoDB.")
+            raise Exception("❌ No FAQs found in MongoDB.")
 
-        # ✅ Check if this question already exists in ChromaDB
-        existing_questions = {metadata["question"] for metadata in collection.get()["metadatas"]}
+        questions = [faq["question"] for faq in faqs]
+        answers = [faq["answer"] for faq in faqs]  # Convert to list instead of dict
 
-        # ✅ Filter only new questions that are NOT in ChromaDB
-        new_faqs = [faq for faq in faqs if faq["question"] not in existing_questions]
-
-        if not new_faqs:
-            logger.info("✅ No new FAQs to store. ChromaDB is up to date.")
-            return  # ✅ Skip processing if no new FAQs
-
-        # Extract only new questions
-        questions = [faq["question"] for faq in new_faqs]
-        answers = {faq["question"]: faq["answer"] for faq in new_faqs}
-
-        # ✅ Use Hugging Face Cloud Embeddings
+        # Load Hugging Face Embeddings
         embedding_model = utils.configure_vector_embeddings()
         embeddings = embedding_model.embed_documents(questions)
+        embeddings_np = np.array(embeddings).astype('float32')
 
-        # ✅ Store only new FAQs in ChromaDB
-        for question, embedding in zip(questions, embeddings):
-            unique_id = str(uuid.uuid4())  # Generate unique ID
-            collection.add(
-                ids=[unique_id],
-                embeddings=[embedding],
-                metadatas=[{"question": question, "answer": answers[question]}]
-            )
+        # Create FAISS index
+        index = faiss.IndexFlatL2(embeddings_np.shape[1])
+        index.add(embeddings_np)
 
-        logger.info(f"✅ {len(new_faqs)} new FAQs stored in ChromaDB successfully.")
+        # Store FAISS index and metadata
+        faiss.write_index(index, FAISS_INDEX_FILE)
+        with open(FAISS_METADATA_FILE, "w") as f:
+            json.dump(answers, f)  # Store list instead of mapping
+
+        logger.info(f"✅ {len(faqs)} FAQs stored in FAISS successfully.")
 
     except Exception as e:
-        logger.error(f"Error storing FAQs in ChromaDB: {e}")
-
+        logger.error(f"❌ Error storing FAQs in FAISS: {e}")
 
 if __name__ == "__main__":
-    store_faqs_in_chroma()
+    store_faqs_in_faiss()
