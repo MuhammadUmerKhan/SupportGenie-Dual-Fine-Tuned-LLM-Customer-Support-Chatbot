@@ -87,6 +87,13 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 
 ---
 
+## 📦 **Database & API Integration**
+
+✅ **MongoDB** – Stores chat history & user feedback  
+✅ **FAISS** – Fast FAQ search & retrieval  
+
+---
+
 ## 🔁 **LLM Functionality**
 
 ### **1️⃣ Understanding User Input**
