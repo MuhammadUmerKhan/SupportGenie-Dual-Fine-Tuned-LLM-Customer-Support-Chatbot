@@ -1,4 +1,8 @@
-import chromadb, pymongo, uuid, sys, os
+import chromadb
+import pymongo
+import uuid 
+import sys
+import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import config.config as CONFIG
 import config.utils as utils
@@ -42,7 +46,10 @@ def load_faqs_from_mongo():
 def reset_chroma_db():
     """Delete existing ChromaDB collection to reset the database."""
     try:
-        chroma_client = chromadb.PersistentClient(path="./chroma_db", settings={"chroma_db_impl": "duckdb"})
+        chroma_client = chromadb.PersistentClient(
+                path="./chroma_db",
+                settings={"chroma_db_impl": "duckdb"}
+            )
 
         chroma_client.delete_collection("faq_embeddings")  # ✅ Delete old collection
         logger.info("✅ ChromaDB collection reset successfully.")
@@ -52,7 +59,10 @@ def reset_chroma_db():
 def store_faqs_in_chroma():
     """Store ONLY new FAQ embeddings in ChromaDB."""
     try:
-        chroma_client = chromadb.PersistentClient(path="./chroma_db")
+        chroma_client = chromadb.PersistentClient(
+                path="./chroma_db",
+                settings={"chroma_db_impl": "duckdb"}
+            )
         collection = chroma_client.get_or_create_collection("faq_embeddings")
 
         # Load FAQ Data
