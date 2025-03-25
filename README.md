@@ -45,7 +45,7 @@ To solve this, we need:
 Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve customer interactions**.
 
 ### **1️⃣ FAQ-Based Chatbot**
-- 🚀 **Retrieves relevant answers** from a pre-defined **FAQ dataset**.
+- 🚀 **Retrieves relevant answers** from a pre-defined **[FAQ dataset](https://github.com/MrJay10/banking-faq-bot/blob/master/BankFAQs.csv)**.
 - 📡 **Uses FAISS for vector search** to fetch the most relevant FAQ.
 - 🤖 **Generates responses** via an LLM when no FAQ matches the query.
 
@@ -71,14 +71,6 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 
 ---
 
-## 📊 **AI-Powered Chatbot**
-- ✅ Uses **FAISS for fast FAQ retrieval**.
-- ✅ **Supports multiple languages**.
-- ✅ **Sentiment detection** on responses.
-- ✅ **Interactive UI with feedback buttons**.
-
----
-
 ## 📈 **Analytics Dashboard**
 - ✅ **Sentiment Distribution** (Positive, Negative, Neutral).
 - ✅ **Trends Over Time** – Tracks **chatbot usage patterns**.
@@ -87,28 +79,21 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 
 ---
 
-## 📦 **Database & API Integration**
-
-✅ **MongoDB** – Stores chat history & user feedback  
-✅ **FAISS** – Fast FAQ search & retrieval  
-
----
-
 ## 🔁 **LLM Functionality**
 
 ### **1️⃣ Understanding User Input**
-🔹 Detects **language** and **query intent**
+- 🔹 Detects **language** and **query intent**
 
 ### **2️⃣ Classifying Questions**
-🔹 Determines **category (e.g., Loans, Security, Payments, etc.)**
+- 🔹 Determines **category (e.g., Loans, Security, Payments, etc.)**
 
 ### **3️⃣ Retrieving Answers**
-🔹 Searches **FAISS database** for relevant FAQ answers
-🔹 If no match is found, generates a response **using LLM**
+- 🔹 Searches **FAISS database** for relevant FAQ answers
+- 🔹 If no match is found, generates a response **using LLM**
 
 ### **4️⃣ Sentiment Analysis & Storage**
-🔹 Predicts **user sentiment** (Positive, Negative, Neutral)
-🔹 Stores **chat history & feedback** in MongoDB
+- 🔹 Predicts **user sentiment** (Positive, Negative, Neutral)
+- 🔹 Stores **chat history & feedback** in MongoDB
 
 ---
 
@@ -122,7 +107,7 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 | **Hugging Face Transformers** | Embedding model for vector similarity |
 | **TextBlob** | Sentiment Analysis |
 | **Plotly** | Visualization in **analytics dashboard** |
-| **FastAPI (Optional)** | API layer for chatbot (if deployed separately) |
+| **FastAPI** | API layer for chatbot |
 
 ---
 
