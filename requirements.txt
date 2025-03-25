@@ -1,8 +1,7 @@
-streamlit
 fastapi[all]
 uvicorn
 pymongo
-chromadb[duckdb]  # ✅ Use DuckDB instead of SQLite for ChromaDB
+faiss-cpu
 langchain
 huggingface_hub
 textblob
@@ -11,4 +10,3 @@ uuid
 mangum
 langchain-huggingface
 langchain-groq
-pysqlite3-binary  # ✅ Ensures SQLite compatibility (if needed)
