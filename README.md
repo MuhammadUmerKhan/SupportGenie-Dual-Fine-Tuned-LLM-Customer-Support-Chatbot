@@ -260,7 +260,8 @@ docker run -p 8501:8501 ai-customer-support
 
 ---
 
-## 🚀 **Want to see a live demo?** Click here: [SupportGenie AI Chatbot](https://ai-powered-customer-support-and-analytics-system.streamlit.app/)
+## 🚀 **Want to see a live demo?** 
+- **Click here: [SupportGenie AI Chatbot](https://ai-powered-customer-support-and-analytics-system.streamlit.app/)**
 ---
 ## 📌 **Conclusion**
 The **AI-Powered Customer Support System** provides **seamless, intelligent customer interactions** through **FAQ retrieval, sentiment analysis, and analytics**. With **scalable deployment** and **real-time insights**, this project can revolutionize **customer engagement** across multiple industries. 🚀
