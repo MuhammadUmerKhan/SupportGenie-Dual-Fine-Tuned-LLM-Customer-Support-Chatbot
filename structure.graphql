@@ -1,0 +1,44 @@
+📂 AI-Powered-Customer-Support-System/
+│
+├── 📂 backend/               # Backend Logic & Core Processing
+│   ├── chatbot.py           # Core Chatbot Logic (LLM, FAQ, Sentiment, Category)
+│   ├── faq_loader.py        # Loads FAQ Data into MongoDB
+│   ├── vector_db.py         # ChromaDB for FAQ Embeddings
+│
+├── 📂 frontend/              # Streamlit UI Components
+│   ├── chatbot_ui.py        # Chatbot Interface
+│   ├── chatbot_analytics.py # Analytics Dashboard UI
+│
+├── 📂 api/          # API Services (Optional, if needed)
+│
+├── 📂 frontend/streamlit/    # Streamlit UI Components
+│   ├── chatbot_analytics.py # Analytics Dashboard UI
+│
+├── 📂 sample/                # Sample Data & Scripts
+│   ├── db_populate.py       # Script to populate MongoDB
+│
+├── 📂 sample/api/            # Sample API
+│   ├── api.py               
+│
+├── 📂 FAQs/                  # FAQ Dataset
+│   ├── BankFAQs.csv         # FAQ Dataset (Raw)
+│   ├── processed_faqs.json  # Preprocessed FAQ Data (Optional)
+│
+├── 📂 chroma_db/             # Persistent ChromaDB Storage
+│   ├── chromadb_index/      # Vector Store for FAQ Retrieval
+│
+├── 📂 logs/                  # Logging & Monitoring
+│   ├── chatbot.log          # Logs for Chatbot Responses
+│
+├── 📂 config/                # Configuration Files
+│   ├── config.py            # Global Configuration
+│   ├── streaming.py         # Streamlit Configuration
+│   ├── utils.py             # Utility Functions
+│
+├── .env                      # Environment Variables (API Keys, DB Config)
+├── requirements.txt          # Python Dependencies for Streamlit & Backend
+├── main.py                   # Entry Point for Streamlit App
+├── README.md                 # Project Overview & Instructions
+├── vercel.json               # Deployment Config for Vercel (Optional)
+├── Dockerfile                # Docker Deployment Config (Optional)
+└── .gitignore                # Ignore Unnecessary Files
