@@ -9,7 +9,6 @@ In today's digital world, businesses need **efficient and scalable** customer su
 - 👉 **AI-Powered Chatbot** → Retrieves responses from **FAQs** and generates answers using **LLMs**.
 - 👉 **Multilingual Support** → Automatically detects **input language**, translates it into **English**, processes it, and responds in the original language.
 - 👉 **Sentiment Analysis** → Understands customer emotions to classify interactions as **positive, negative, or neutral**.
-- 👉 **User Feedback System** → Users can **rate chatbot responses** with 👍 or 👎 for continuous improvement.
 - 👉 **FAISS Vector Search** → Stores and retrieves **FAQ embeddings** for **fast and accurate** responses.
 - 👉 **MongoDB Integration** → Stores **chat history, feedback, and analytics**.
 - 👉 **Interactive Analytics Dashboard** → Provides **data insights** on chatbot interactions and sentiment trends.
@@ -36,9 +35,9 @@ Customer support teams face **high workloads and delays**, leading to **poor use
 **"Can we automate responses to common queries while understanding customer sentiment and improving support?"**
 
 To solve this, we need:
-👉 A **fast & accurate chatbot** to **handle FAQs** automatically.
-👉 **Sentiment analysis** to categorize **customer feedback**.
-👉 **Real-time analytics** to monitor trends and **optimize responses**.
+- 👉 A **fast & accurate chatbot** to **handle FAQs** automatically.
+- 👉 **Sentiment analysis** to categorize **customer feedback**.
+- 👉 **Real-time analytics** to monitor trends and **optimize responses**.
 
 ---
 
@@ -52,7 +51,6 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 
 ### **2️⃣ Sentiment Analysis & Feedback Collection**
 - 🧠 **Detects user sentiment** (Positive, Negative, Neutral).
-- 👍👎 **Allows feedback on responses** for future improvements.
 - 📊 **Stores insights in MongoDB for continuous learning**.
 
 ### **3️⃣ Real-Time Analytics Dashboard**
