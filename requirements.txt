@@ -2,7 +2,7 @@ streamlit
 fastapi[all]
 uvicorn
 pymongo
-chromadb
+chromadb[duckdb]
 langchain
 huggingface_hub
 textblob
@@ -11,3 +11,4 @@ uuid
 mangum
 langchain-huggingface
 langchain-groq
+pysqlite3-binary
