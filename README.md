@@ -248,18 +248,15 @@ docker run -p 8501:8501 ai-customer-support
 
 ---
 
-## 📌 **Future Improvements**
-🔹 **Voice-Enabled Chatbot** – Integrate **speech recognition** for voice queries.  
-🔹 **WhatsApp & Telegram Integration** – Expand support to messaging apps.  
-🔹 **Advanced Sentiment Analysis** – Use transformer models for better predictions.  
-🔹 **Proactive Support Suggestions** – Predict user needs based on chat history.  
-
----
-
 ## 🛠️ **Future Improvements**
-- ✅ **User Sessions** → Recognize returning users.
-- ✅ **Advanced LLM Fine-Tuning** → Improve chatbot responses.
-- ✅ **Voice Interaction** → Convert text-based chatbot into a **voice assistant**.
+- 🔹 **User Sessions** → Recognize returning users.
+- 🔹 **Advanced LLM Fine-Tuning** → Improve chatbot responses.
+- 🔹 **Voice Interaction** → Convert text-based chatbot into a **voice assistant**.
+- 🔹 **Voice-Enabled Chatbot** – Integrate **speech recognition** for voice queries.  
+- 🔹 **WhatsApp & Telegram Integration** – Expand support to messaging apps.  
+- 🔹 **Advanced Sentiment Analysis** – Use transformer models for better predictions.  
+- 🔹 **Proactive Support Suggestions** – Predict user needs based on chat history.  
+
 
 ---
 
