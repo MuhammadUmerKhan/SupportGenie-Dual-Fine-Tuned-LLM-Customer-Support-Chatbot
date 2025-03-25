@@ -42,7 +42,8 @@ def load_faqs_from_mongo():
 def reset_chroma_db():
     """Delete existing ChromaDB collection to reset the database."""
     try:
-        chroma_client = chromadb.PersistentClient(path="./chroma_db")
+        chroma_client = chromadb.PersistentClient(path="./chroma_db", settings={"chroma_db_impl": "duckdb"})
+
         chroma_client.delete_collection("faq_embeddings")  # ✅ Delete old collection
         logger.info("✅ ChromaDB collection reset successfully.")
     except Exception as e:
