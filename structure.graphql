@@ -9,16 +9,14 @@
 │   ├── chatbot_ui.py        # Chatbot Interface
 │   ├── chatbot_analytics.py # Analytics Dashboard UI
 │
-├── 📂 api/          # API Services (Optional, if needed)
+├── 📂 api/          # API Services
+│   ├── api.py    
 │
 ├── 📂 frontend/streamlit/    # Streamlit UI Components
 │   ├── chatbot_analytics.py # Analytics Dashboard UI
 │
 ├── 📂 sample/                # Sample Data & Scripts
-│   ├── db_populate.py       # Script to populate MongoDB
-│
-├── 📂 sample/api/            # Sample API
-│   ├── api.py               
+│   ├── db_populate.py       # Script to populate MongoDB           
 │
 ├── 📂 FAQs/                  # FAQ Dataset
 │   ├── BankFAQs.csv         # FAQ Dataset (Raw)
