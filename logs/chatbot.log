@@ -3654,3 +3654,11 @@ This approach not only answers the question but also offers additional support a
 2025-03-25 17:00:25,649 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-25 17:00:26,578 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-25 17:00:26,708 - INFO - ✅ Chat stored: {'user': "service is bad my issue did'nt solve", 'category': 'other', 'bot': "I'm sorry to hear about your experience. If your issue relates to updating your mobile number, please enter the number you have on file with us. If you've changed your number, feel free to reach out to our Customer Care Center to update your information. We're here to help!", 'sentiment': 'Negative', 'timestamp': datetime.datetime(2025, 3, 25, 12, 0, 26, 580241), '_id': ObjectId('67e29ada82430b35662e6d71')}
+2025-03-25 17:06:05,784 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-25 17:06:14,963 - INFO - Use pytorch device_name: cpu
+2025-03-25 17:06:14,963 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-25 17:06:18,944 - INFO - ✅ Answer Loaded Successfully
+2025-03-25 17:06:20,151 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-25 17:06:23,053 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-25 17:06:23,837 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-25 17:06:24,041 - INFO - ✅ Chat stored: {'user': 'hello', 'category': 'other', 'bot': 'Hello! It looks like you might be looking for information about Verified by Visa or MasterCard SecureCode. When you sign up for these services, you create a Personal Assurance Message or a Personal Greeting. This message appears when you make an online payment to confirm that HDFC Bank is authenticating your transaction. This step helps ensure the security of your payments. If you need more details, feel free to ask!', 'sentiment': 'Not a Review', 'timestamp': datetime.datetime(2025, 3, 25, 12, 6, 23, 839096), '_id': ObjectId('67e29c3fd3f4be71725429e6')}
