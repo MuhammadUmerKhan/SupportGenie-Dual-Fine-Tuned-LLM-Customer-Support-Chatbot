@@ -10,3 +10,4 @@ plotly
 uuid
 mangum
 langchain-huggingface
+langchain-groq
