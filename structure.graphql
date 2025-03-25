@@ -33,6 +33,9 @@
 │   ├── streaming.py         # Streamlit Configuration
 │   ├── utils.py             # Utility Functions
 │
+├── 📂 deployment/             # Deployment Configurations
+│   ├── Dockerfile            # Docker Configuration
+
 ├── .env                      # Environment Variables (API Keys, DB Config)
 ├── requirements.txt          # Python Dependencies for Streamlit & Backend
 ├── main.py                   # Entry Point for Streamlit App
