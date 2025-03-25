@@ -1,14 +1,10 @@
-import dotenv
-import os
-import logging
+import dotenv, os, sys, os
 from urllib.parse import quote_plus
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from logger import get_logger
 
 # ✅ Configure Logging
-logging.basicConfig(
-    level=logging.INFO, 
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 try:
     # ✅ Load environment variables
