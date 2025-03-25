@@ -1,39 +1,91 @@
-# 🤖 **AI-Powered Customer Support System**
+# 📌 **AI-Powered Customer Support System**
+
+![ai_chatbot.png](https://your-image-url.com/ai_chatbot.png)
 
 ## 🚀 **Project Overview**
-The **AI-Powered Customer Support System** is an intelligent chatbot designed to enhance customer service by **answering queries**, **analyzing user sentiment**, and **providing insightful analytics**. The system integrates **FAQs, LLM-based responses, sentiment analysis, and feedback collection** to continuously improve customer interactions.
+In today's digital world, businesses need **efficient and scalable** customer support solutions. This project leverages **AI-powered chatbots, FAQ retrieval, sentiment analysis, and analytics dashboards** to enhance customer experience.
 
-💡 **Why This Project?**  
-- ✅ **AI-Driven Chatbot** → Uses **FAQ matching** and **LLM** for dynamic responses.
-- ✅ **Multilingual Support** → Detects input language & translates it for better comprehension.
-- ✅ **Sentiment Analysis & Trends** → Tracks **customer emotions** over time.
-- ✅ **Real-Time Analytics Dashboard** → Displays customer insights using **interactive charts**.
-- ✅ **MongoDB & FAISS Integration** → Efficient storage & retrieval of FAQs and chat history.
-- ✅ **Streamlit UI for Chatbot & Analytics** → Easy-to-use customer support platform.
+💡 **What makes this project unique?**
+- 👉 **AI-Powered Chatbot** → Retrieves responses from **FAQs** and generates answers using **LLMs**.
+- 👉 **Multilingual Support** → Automatically detects **input language**, translates it into **English**, processes it, and responds in the original language.
+- 👉 **Sentiment Analysis** → Understands customer emotions to classify interactions as **positive, negative, or neutral**.
+- 👉 **User Feedback System** → Users can **rate chatbot responses** with 👍 or 👎 for continuous improvement.
+- 👉 **FAISS Vector Search** → Stores and retrieves **FAQ embeddings** for **fast and accurate** responses.
+- 👉 **MongoDB Integration** → Stores **chat history, feedback, and analytics**.
+- 👉 **Interactive Analytics Dashboard** → Provides **data insights** on chatbot interactions and sentiment trends.
+- 👉 **Streamlit UI** → Web-based **interactive chatbot and analytics dashboard**.
 
 ---
 
-## 📁 **Table of Contents**
-- [📌 Features](#-features)
-- [🛠️ Tech Stack](#-tech-stack)
-- [📂 Project Structure](#-project-structure)
+## **📁 Table of Contents**
+- [📌 Problem Statement](#-problem-statement)
+- [🛠️ Solution Approach](#-solution-approach)
+- [🔥 Project Features](#-project-features)
+- [📊 AI-Powered Chatbot](#-ai-powered-chatbot)
+- [📈 Analytics Dashboard](#-analytics-dashboard)
 - [⚙️ Setup and Installation](#️-setup-and-installation)
-- [🚀 Running the Application](#-running-the-application)
-- [📊 AI-Powered Analytics Dashboard](#-ai-powered-analytics-dashboard)
-- [🌐 Deployment Guide](#-deployment-guide)
-- [📌 Future Improvements](#-future-improvements)
+- [🚀 Running the Chatbot & Analytics](#-running-the-chatbot--analytics)
+- [🖥️ Deployment on Streamlit Cloud](#-deployment-on-streamlit-cloud)
+- [🛠️ Future Improvements](#-future-improvements)
+- [📌 Conclusion](#-conclusion)
 
 ---
 
-## 📌 **Features**
-🔹 **AI Chatbot with FAQ Matching** → Finds the best **FAQ-based response** using **FAISS indexing**.  
-🔹 **Multilingual Support** → Detects input language & translates queries before processing.  
-🔹 **Real-Time Sentiment Analysis** → Categorizes user interactions as **Positive, Negative, or Neutral**.  
-🔹 **Feedback System (👍👎)** → Users can rate responses, helping to improve chatbot accuracy.  
-🔹 **Analytics Dashboard** → Tracks **sentiment trends, category insights, and user activity**.  
-🔹 **MongoDB for Chat History** → Stores user queries and bot responses for future reference.  
-🔹 **Fast Search with FAISS** → Uses **vector search** for **efficient FAQ retrieval**.  
-🔹 **Interactive UI (Streamlit)** → Clean and user-friendly interface for chatbot & analytics.  
+## 📌 **Problem Statement**
+Customer support teams face **high workloads and delays**, leading to **poor user experience**. The challenge is:
+**"Can we automate responses to common queries while understanding customer sentiment and improving support?"**
+
+To solve this, we need:
+👉 A **fast & accurate chatbot** to **handle FAQs** automatically.
+👉 **Sentiment analysis** to categorize **customer feedback**.
+👉 **Real-time analytics** to monitor trends and **optimize responses**.
+
+---
+
+## 🛠️ **Solution Approach**
+Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve customer interactions**.
+
+### **1️⃣ FAQ-Based Chatbot**
+- 🚀 **Retrieves relevant answers** from a pre-defined **FAQ dataset**.
+- 📡 **Uses FAISS for vector search** to fetch the most relevant FAQ.
+- 🤖 **Generates responses** via an LLM when no FAQ matches the query.
+
+### **2️⃣ Sentiment Analysis & Feedback Collection**
+- 🧠 **Detects user sentiment** (Positive, Negative, Neutral).
+- 👍👎 **Allows feedback on responses** for future improvements.
+- 📊 **Stores insights in MongoDB for continuous learning**.
+
+### **3️⃣ Real-Time Analytics Dashboard**
+- 📈 **Tracks chatbot usage & sentiment trends over time**.
+- 🎨 **Provides interactive charts & insights**.
+- 🔄 **Helps optimize responses and improve user experience**.
+
+---
+
+
+## 🔥 **Project Features**
+🔹 **AI-Powered Chatbot** for **instant support**.
+🔹 **Multilingual Support** – Detects and responds in **any language**.
+🔹 **Sentiment Analysis & Feedback**.
+🔹 **FAISS Vector Search** for **fast FAQ retrieval**.
+🔹 **MongoDB Integration** for **chat storage**.
+🔹 **Interactive Streamlit UI** for **chatbot & analytics**.
+
+---
+
+## 📊 **AI-Powered Chatbot**
+✅ Uses **FAISS for fast FAQ retrieval**.
+✅ **Supports multiple languages**.
+✅ **Sentiment detection** on responses.
+✅ **Interactive UI with feedback buttons**.
+
+---
+
+## 📈 **Analytics Dashboard**
+✅ **Sentiment Distribution** (Positive, Negative, Neutral).
+✅ **Trends Over Time** – Tracks **chatbot usage patterns**.
+✅ **Engagement Heatmap** – Shows peak chatbot usage hours.
+✅ **Top FAQs** – Identifies **most asked questions**.
 
 ---
 
@@ -53,36 +105,51 @@ The **AI-Powered Customer Support System** is an intelligent chatbot designed to
 
 ## 📂 **Project Structure**
 ```
-AI-Powered-Customer-Support-System/
+📂 AI-Powered-Customer-Support-System/
 │
-├── backend/               # Backend Logic & Core Processing
-│   ├── chatbot.py         # Core Chatbot Logic (LLM, FAQ, Sentiment, Category)
-│   ├── faq_loader.py      # Loads FAQ Data into MongoDB
-│   ├── vector_db.py       # FAISS for FAQ Embeddings
+├── 📂 backend/               # Backend Logic & Core Processing
+│   ├── chatbot.py           # Core Chatbot Logic (LLM, FAQ, Sentiment, Category)
+│   ├── faq_loader.py        # Loads FAQ Data into MongoDB
+│   ├── vector_db.py         # ChromaDB for FAQ Embeddings
 │
-├── frontend/              # Streamlit UI Components
-│   ├── chatbot_ui.py      # Chatbot Interface
+├── 📂 frontend/              # Streamlit UI Components
+│   ├── chatbot_ui.py        # Chatbot Interface
 │   ├── chatbot_analytics.py # Analytics Dashboard UI
 │
-├── faiss_db/              # FAISS Storage for Vector Search
-│   ├── faiss_index.bin    # FAISS Index
-│   ├── faiss_metadata.json # FAQ Metadata for indexing
+├── 📂 api/          # API Services
+│   ├── api.py    
 │
-├── FAQs/                  # FAQ Dataset
-│   ├── BankFAQs.csv       # Raw FAQ Dataset
-│   ├── processed_faqs.json # Preprocessed FAQ Data
+├── 📂 frontend/streamlit/    # Streamlit UI Components
+│   ├── chatbot_analytics.py # Analytics Dashboard UI
 │
-├── logs/                  # Logging & Monitoring
-│   ├── chatbot.log        # Logs for Chatbot Responses
+├── 📂 sample/                # Sample Data & Scripts
+│   ├── db_populate.py       # Script to populate MongoDB           
 │
-├── config/                # Configuration & Utility Functions
-│   ├── config.py          # Global Configuration
-│   ├── utils.py           # Helper Functions
+├── 📂 FAQs/                  # FAQ Dataset
+│   ├── BankFAQs.csv         # FAQ Dataset (Raw)
+│   ├── processed_faqs.json  # Preprocessed FAQ Data (Optional)
 │
-├── requirements.txt       # Python Dependencies
-├── main.py                # Entry Point for Streamlit App
-├── Dockerfile             # Docker Deployment Configuration
-└── README.md              # Project Documentation
+├── 📂 chroma_db/             # Persistent ChromaDB Storage
+│   ├── chromadb_index/      # Vector Store for FAQ Retrieval
+│
+├── 📂 logs/                  # Logging & Monitoring
+│   ├── chatbot.log          # Logs for Chatbot Responses
+│
+├── 📂 config/                # Configuration Files
+│   ├── config.py            # Global Configuration
+│   ├── streaming.py         # Streamlit Configuration
+│   ├── utils.py             # Utility Functions
+│
+├── 📂 deployment/             # Deployment Configurations
+│   ├── Dockerfile            # Docker Configuration
+
+├── .env                      # Environment Variables (API Keys, DB Config)
+├── requirements.txt          # Python Dependencies for Streamlit & Backend
+├── main.py                   # Entry Point for Streamlit App
+├── README.md                 # Project Overview & Instructions
+├── vercel.json               # Deployment Config for Vercel (Optional)
+├── Dockerfile                # Docker Deployment Config (Optional)
+└── .gitignore                # Ignore Unnecessary Files
 ```
 
 ---
@@ -121,6 +188,15 @@ MONGO_URI=mongodb+srv://your_user:your_password@cluster.mongodb.net/chatbotDB
 ```bash
 streamlit run main.py
 ```
+---
+
+## **🖥️ Running the FastAPI Server**
+Once the model is trained and registered, run **FastAPI** to serve real-time predictions:
+
+```bash
+uvicorn api.api:app --host 0.0.0.0 --port 8000 --reload
+```
+This starts the FastAPI server on **http://127.0.0.1:8000**.
 
 ---
 
@@ -157,8 +233,23 @@ docker run -p 8501:8501 ai-customer-support
 
 ---
 
+## 🖥️ **Deployment on Streamlit Cloud**
+To deploy:
+1. **Push your project to GitHub**.
+2. **Go to [Streamlit Cloud](https://ai-powered-customer-support-and-analytics-system.streamlit.app/)**.
+3. **Deploy using your repository URL**.
+4. Set environment variables (`MONGO_URI`).
+
+---
+
+## 🛠️ **Future Improvements**
+✅ **User Sessions** → Recognize returning users.
+✅ **Advanced LLM Fine-Tuning** → Improve chatbot responses.
+✅ **Voice Interaction** → Convert text-based chatbot into a **voice assistant**.
+
+---
+
 ## 📌 **Conclusion**
 The **AI-Powered Customer Support System** provides **seamless, intelligent customer interactions** through **FAQ retrieval, sentiment analysis, and analytics**. With **scalable deployment** and **real-time insights**, this project can revolutionize **customer engagement** across multiple industries. 🚀
 
 🔹 **Want to contribute?** Fork the repo and submit a PR! 🎉
-
