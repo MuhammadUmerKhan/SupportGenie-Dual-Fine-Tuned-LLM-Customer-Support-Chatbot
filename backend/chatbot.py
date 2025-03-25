@@ -42,7 +42,7 @@ def initialize_chatgroq():
 def search_faq(user_input):
     """Search for the most relevant FAQ using ChromaDB."""
     try:
-        chroma_client = chromadb.PersistentClient(path="./chroma_db")
+        chroma_client = chromadb.PersistentClient(path="./chroma_db", settings={"chroma_db_impl": "duckdb"})
         collection = chroma_client.get_or_create_collection("faq_embeddings")
         
         embedding_model = utils.configure_vector_embeddings()
