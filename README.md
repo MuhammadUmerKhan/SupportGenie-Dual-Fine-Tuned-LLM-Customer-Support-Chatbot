@@ -1,6 +1,6 @@
-# 📌 **AI-Powered Customer Support System**
+# 📌 **SupportGenie: AI-Powered Customer Assistance & Insights**
 
-![ai_chatbot.png](https://your-image-url.com/ai_chatbot.png)
+![ai_chatbot.png](https://www.addevice.io/storage/ckeditor/uploads/images/64d0d72b8dcde_the.role.of.chatbots.and.humans.in.customer.support.1.png)
 
 ## 🚀 **Project Overview**
 In today's digital world, businesses need **efficient and scalable** customer support solutions. This project leverages **AI-powered chatbots, FAQ retrieval, sentiment analysis, and analytics dashboards** to enhance customer experience.
@@ -64,28 +64,28 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 
 
 ## 🔥 **Project Features**
-🔹 **AI-Powered Chatbot** for **instant support**.
-🔹 **Multilingual Support** – Detects and responds in **any language**.
-🔹 **Sentiment Analysis & Feedback**.
-🔹 **FAISS Vector Search** for **fast FAQ retrieval**.
-🔹 **MongoDB Integration** for **chat storage**.
-🔹 **Interactive Streamlit UI** for **chatbot & analytics**.
+- 🔹 **AI-Powered Chatbot** for **instant support**.
+- 🔹 **Multilingual Support** – Detects and responds in **any language**.
+- 🔹 **Sentiment Analysis & Feedback**.
+- 🔹 **FAISS Vector Search** for **fast FAQ retrieval**.
+- 🔹 **MongoDB Integration** for **chat storage**.
+- 🔹 **Interactive Streamlit UI** for **chatbot & analytics**.
 
 ---
 
 ## 📊 **AI-Powered Chatbot**
-✅ Uses **FAISS for fast FAQ retrieval**.
-✅ **Supports multiple languages**.
-✅ **Sentiment detection** on responses.
-✅ **Interactive UI with feedback buttons**.
+- ✅ Uses **FAISS for fast FAQ retrieval**.
+- ✅ **Supports multiple languages**.
+- ✅ **Sentiment detection** on responses.
+= ✅ **Interactive UI with feedback buttons**.
 
 ---
 
 ## 📈 **Analytics Dashboard**
-✅ **Sentiment Distribution** (Positive, Negative, Neutral).
-✅ **Trends Over Time** – Tracks **chatbot usage patterns**.
-✅ **Engagement Heatmap** – Shows peak chatbot usage hours.
-✅ **Top FAQs** – Identifies **most asked questions**.
+- ✅ **Sentiment Distribution** (Positive, Negative, Neutral).
+- ✅ **Trends Over Time** – Tracks **chatbot usage patterns**.
+- ✅ **Engagement Heatmap** – Shows peak chatbot usage hours.
+- ✅ **Top FAQs** – Identifies **most asked questions**.
 
 ---
 
