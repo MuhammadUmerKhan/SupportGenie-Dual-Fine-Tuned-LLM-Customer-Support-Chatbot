@@ -11,3 +11,4 @@ uuid
 mangum
 langchain-huggingface
 langchain-groq
+sqlite3 >= 3.35.0
