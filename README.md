@@ -1,7 +1,5 @@
 # 🤖 **AI-Powered Customer Support System**
 
-![AI Chatbot](https://miro.medium.com/v2/resize:fit:1024/1*TgciopaOk-C8fwtPmmet3w.png)
-
 ## 🚀 **Project Overview**
 The **AI-Powered Customer Support System** is an intelligent chatbot designed to enhance customer service by **answering queries**, **analyzing user sentiment**, and **providing insightful analytics**. The system integrates **FAQs, LLM-based responses, sentiment analysis, and feedback collection** to continuously improve customer interactions.
 
@@ -86,6 +84,17 @@ AI-Powered-Customer-Support-System/
 ├── Dockerfile             # Docker Deployment Configuration
 └── README.md              # Project Documentation
 ```
+
+---
+## 📊 **Dashboard Analytics**
+
+
+| Visualization Type      | Distribution/Insights |
+|------------------------|----------------------|
+| **Most Frequently Asked Questions** | ![Feature Importance](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/imgs/most_fre_ques.png) |
+| **Sentiments Over Time**   | ![Confusion Matrix](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/imgs/sent_ovr_time.png) |
+| **Sentiment Trend** | ![Churn Distribution](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/imgs/sent_trend.png) |
+| **Sentiment Distribution**    | ![Customer Tenure Distribution](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/imgs/sentiment_distribution.png) |
 
 ---
 
