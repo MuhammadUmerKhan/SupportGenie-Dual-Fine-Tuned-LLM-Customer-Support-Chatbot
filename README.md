@@ -64,12 +64,12 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 
 
 ## 🔥 **Project Features**
-- 🔹 **AI-Powered Chatbot** for **instant support**.
-- 🔹 **Multilingual Support** – Detects and responds in **any language**.
-- 🔹 **Sentiment Analysis & Feedback**.
-- 🔹 **FAISS Vector Search** for **fast FAQ retrieval**.
-- 🔹 **MongoDB Integration** for **chat storage**.
-- 🔹 **Interactive Streamlit UI** for **chatbot & analytics**.
+-  **AI-Powered Chatbot** for **instant support**.
+-  **Multilingual Support** – Detects and responds in **any language**.
+-  **Sentiment Analysis & Feedback**.
+-  **FAISS Vector Search** for **fast FAQ retrieval**.
+-  **MongoDB Integration** for **chat storage**.
+-  **Interactive Streamlit UI** for **chatbot & analytics**.
 
 ---
 
@@ -77,7 +77,7 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 - ✅ Uses **FAISS for fast FAQ retrieval**.
 - ✅ **Supports multiple languages**.
 - ✅ **Sentiment detection** on responses.
-= ✅ **Interactive UI with feedback buttons**.
+- ✅ **Interactive UI with feedback buttons**.
 
 ---
 
@@ -233,19 +233,10 @@ docker run -p 8501:8501 ai-customer-support
 
 ---
 
-## 🖥️ **Deployment on Streamlit Cloud**
-To deploy:
-1. **Push your project to GitHub**.
-2. **Go to [Streamlit Cloud](https://ai-powered-customer-support-and-analytics-system.streamlit.app/)**.
-3. **Deploy using your repository URL**.
-4. Set environment variables (`MONGO_URI`).
-
----
-
 ## 🛠️ **Future Improvements**
-✅ **User Sessions** → Recognize returning users.
-✅ **Advanced LLM Fine-Tuning** → Improve chatbot responses.
-✅ **Voice Interaction** → Convert text-based chatbot into a **voice assistant**.
+- ✅ **User Sessions** → Recognize returning users.
+- ✅ **Advanced LLM Fine-Tuning** → Improve chatbot responses.
+- ✅ **Voice Interaction** → Convert text-based chatbot into a **voice assistant**.
 
 ---
 
