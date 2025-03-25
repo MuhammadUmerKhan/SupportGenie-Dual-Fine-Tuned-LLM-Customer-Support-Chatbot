@@ -244,7 +244,7 @@ docker run -p 8501:8501 ai-customer-support
 
 ---
 
-📢 #### **Shoutout to [MrJay10](https://github.com/MrJay10/banking-faq-bot/blob/master/BankFAQs.csv) for providing the FAQ**
+### 📢 **Shoutout to [MrJay10](https://github.com/MrJay10/banking-faq-bot/blob/master/BankFAQs.csv) for providing the FAQ**
 
 ---
 ## 🚀 **Want to see a live demo?** 
