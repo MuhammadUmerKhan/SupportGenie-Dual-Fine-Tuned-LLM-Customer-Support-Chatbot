@@ -42,7 +42,7 @@ def chatbot():
 # Function to Run FAQ Page
 def faq_page():
     """Displays the FAQs from the dataset."""
-    st.title("📖 Frequently Asked Questions (FAQs)")
+    st.markdown("<h1 style='text-align: center; color: #FFA500;'>📖 Frequently Asked Questions (FAQs)", unsafe_allow_html=True)
     faqs_data = get_faqs()
     if "error" in faqs_data:
         st.error(faqs_data["error"])
