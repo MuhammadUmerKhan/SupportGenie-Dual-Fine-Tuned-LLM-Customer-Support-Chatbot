@@ -3617,3 +3617,40 @@ This approach not only answers the question but also offers additional support a
 2025-03-25 11:48:08,631 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-25 11:48:09,654 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-25 11:48:09,788 - INFO - ✅ Chat stored: {'user': 'hello rancho', 'category': 'other', 'bot': "Hello! Currently, we don't offer a telephone service. For any questions, requests, or concerns, please feel free to email us at [email protected]. We're here to help!", 'sentiment': 'Not a Review', 'feedback': None, 'timestamp': datetime.datetime(2025, 3, 25, 6, 48, 9, 656828), '_id': ObjectId('67e251a95b81f7162141d6cc')} (ID: 67e251a95b81f7162141d6cc)
+2025-03-25 16:27:47,719 - INFO - Use pytorch device_name: cpu
+2025-03-25 16:27:47,721 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-25 16:28:56,211 - INFO - ✅ FAQs stored in FAISS successfully.
+2025-03-25 16:32:59,675 - INFO - Use pytorch device_name: cpu
+2025-03-25 16:32:59,675 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-25 16:34:33,350 - INFO - ✅ FAQs stored in FAISS successfully.
+2025-03-25 16:40:06,724 - INFO - ✅ Created FAISS DB directory: /home/muhammad/AI-Powered-Customer-Support-and-Analytics-System/backend/../faiss_db
+2025-03-25 16:40:16,435 - INFO - Use pytorch device_name: cpu
+2025-03-25 16:40:16,435 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-25 16:41:25,317 - INFO - ✅ FAQs stored in FAISS successfully.
+2025-03-25 16:43:28,196 - INFO - Use pytorch device_name: cpu
+2025-03-25 16:43:28,197 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-25 16:43:31,973 - ERROR - Error searching FAQs: list index out of range
+2025-03-25 16:49:01,085 - INFO - Use pytorch device_name: cpu
+2025-03-25 16:49:01,085 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-25 16:49:05,011 - ERROR - Error searching FAQs: list index out of range
+2025-03-25 16:53:49,870 - ERROR - ❌ MongoDB connection failed: Database objects do not implement truth value testing or bool(). Please compare with None instead: database is not None
+2025-03-25 16:53:49,870 - ERROR - ❌ Error storing FAQs in FAISS: ❌ Database connection failed.
+2025-03-25 16:55:15,406 - INFO - Use pytorch device_name: cpu
+2025-03-25 16:55:15,407 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-25 16:56:23,748 - INFO - ✅ 1764 FAQs stored in FAISS successfully.
+2025-03-25 16:57:09,327 - INFO - Use pytorch device_name: cpu
+2025-03-25 16:57:09,327 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-25 16:57:14,405 - ERROR - Error searching FAQs: 'list' object has no attribute 'keys'
+2025-03-25 16:58:12,356 - INFO - Use pytorch device_name: cpu
+2025-03-25 16:58:12,356 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-25 16:59:43,917 - INFO - Use pytorch device_name: cpu
+2025-03-25 16:59:43,917 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-25 16:59:48,896 - INFO - ✅ Answer Loaded Successfully
+2025-03-25 17:00:10,571 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-25 17:00:16,409 - INFO - Use pytorch device_name: cpu
+2025-03-25 17:00:16,409 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-03-25 17:00:20,941 - INFO - ✅ Answer Loaded Successfully
+2025-03-25 17:00:22,271 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-25 17:00:25,649 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-25 17:00:26,578 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-25 17:00:26,708 - INFO - ✅ Chat stored: {'user': "service is bad my issue did'nt solve", 'category': 'other', 'bot': "I'm sorry to hear about your experience. If your issue relates to updating your mobile number, please enter the number you have on file with us. If you've changed your number, feel free to reach out to our Customer Care Center to update your information. We're here to help!", 'sentiment': 'Negative', 'timestamp': datetime.datetime(2025, 3, 25, 12, 0, 26, 580241), '_id': ObjectId('67e29ada82430b35662e6d71')}
