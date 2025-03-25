@@ -263,10 +263,10 @@ def main():
         print(f"Bot: {response}")
 
 if __name__ == "__main__":
-    main()
+    # main()
     # print(search_faq("How to reset Password?"))
     # print(FAISS_DB_PATH, FAISS_INDEX_FILE, FAISS_METADATA_FILE)
-    # print(get_chatbot_response("service is bad my issue did'nt solve"))
+    print(get_chatbot_response("service is bad my issue did'nt solve"))
     # print(get_chatbot_response("le service est très mauvais, mon problème n'a pas été résolu")) # service is very bad, my issue did'nt resolve
     # print(store_chat_history("Thanks my issue reolved", "great"))
     # print(initialize_chatgroq())
