@@ -242,9 +242,11 @@ docker run -p 8501:8501 ai-customer-support
 - 🔹 **Advanced Sentiment Analysis** – Use transformer models for better predictions.  
 - 🔹 **Proactive Support Suggestions** – Predict user needs based on chat history.  
 
-
 ---
 
+📢 #### **Shoutout to [MrJay10](https://github.com/MrJay10/banking-faq-bot/blob/master/BankFAQs.csv) for providing the FAQ**
+
+---
 ## 🚀 **Want to see a live demo?** 
 - **Click here: [SupportGenie AI Chatbot](https://ai-powered-customer-support-and-analytics-system.streamlit.app/)**
 ---
