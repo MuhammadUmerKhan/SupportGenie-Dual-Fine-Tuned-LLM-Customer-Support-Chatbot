@@ -129,10 +129,10 @@ docker run -p 8501:8501 ai-customer-support
 
 ## 📌 **Future Enhancements**
 
-✅ **User Sessions** – Recognize returning users for a personalized experience.
-✅ **Voice Input** – Enable users to **speak queries** instead of typing.
-✅ **Smart Suggestions** – Predict user queries before they finish typing.
-✅ **API Integration** – Connect chatbot with customer support ticketing systems.
+- ✅ **User Sessions** – Recognize returning users for a personalized experience.
+- ✅ **Voice Input** – Enable users to **speak queries** instead of typing.
+- ✅ **Smart Suggestions** – Predict user queries before they finish typing.
+- ✅ **API Integration** – Connect chatbot with customer support ticketing systems.
 
 ---
 
