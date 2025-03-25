@@ -9,3 +9,4 @@ textblob
 plotly
 uuid
 mangum
+langchain-huggingface
