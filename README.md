@@ -89,6 +89,24 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 
 ---
 
+## 🔁 **LLM Functionality**
+
+### **1️⃣ Understanding User Input**
+🔹 Detects **language** and **query intent**
+
+### **2️⃣ Classifying Questions**
+🔹 Determines **category (e.g., Loans, Security, Payments, etc.)**
+
+### **3️⃣ Retrieving Answers**
+🔹 Searches **FAISS database** for relevant FAQ answers
+🔹 If no match is found, generates a response **using LLM**
+
+### **4️⃣ Sentiment Analysis & Storage**
+🔹 Predicts **user sentiment** (Positive, Negative, Neutral)
+🔹 Stores **chat history & feedback** in MongoDB
+
+---
+
 ## 🛠️ **Tech Stack**
 | Technology | Usage |
 |------------|-------|
