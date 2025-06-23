@@ -1,4 +1,4 @@
-# 📌 **SupportGenie: AI-Powered Customer Assistance & Insights**
+# 📌 **SupportGenie: AI Assistant for Customer Support**
 
 ![ai_chatbot.png](https://www.addevice.io/storage/ckeditor/uploads/images/64d0d72b8dcde_the.role.of.chatbots.and.humans.in.customer.support.1.png)
 
