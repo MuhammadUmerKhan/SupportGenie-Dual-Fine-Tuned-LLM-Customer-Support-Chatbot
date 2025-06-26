@@ -10,3 +10,4 @@ uuid
 mangum
 langchain-huggingface
 langchain-groq
+tf-keras
