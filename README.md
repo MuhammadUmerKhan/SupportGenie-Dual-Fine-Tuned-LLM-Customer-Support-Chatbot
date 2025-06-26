@@ -63,7 +63,6 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 
 ## 🔥 **Project Features**
 -  **AI-Powered Chatbot** for **instant support**.
--  **Multilingual Support** – Detects and responds in **any language**.
 -  **Sentiment Analysis & Feedback**.
 -  **FAISS Vector Search** for **fast FAQ retrieval**.
 -  **MongoDB Integration** for **chat storage**.
@@ -115,11 +114,6 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 ```
 📂 AI-Powered-Customer-Support-System/
 │
-├── 📂 backend/               # Backend Logic & Core Processing
-│   ├── chatbot.py           # Core Chatbot Logic (LLM, FAQ, Sentiment, Category)
-│   ├── faq_loader.py        # Loads FAQ Data into MongoDB
-│   ├── vector_db.py         # ChromaDB for FAQ Embeddings
-│
 ├── 📂 frontend/              # Streamlit UI Components
 │   ├── chatbot_ui.py        # Chatbot Interface
 │   ├── chatbot_analytics.py # Analytics Dashboard UI
@@ -137,26 +131,25 @@ Our solution uses **AI chatbots, NLP, and analytics** to **automate and improve 
 │   ├── BankFAQs.csv         # FAQ Dataset (Raw)
 │   ├── processed_faqs.json  # Preprocessed FAQ Data (Optional)
 │
-├── 📂 chroma_db/             # Persistent ChromaDB Storage
-│   ├── chromadb_index/      # Vector Store for FAQ Retrieval
 │
 ├── 📂 logs/                  # Logging & Monitoring
 │   ├── chatbot.log          # Logs for Chatbot Responses
 │
-├── 📂 config/                # Configuration Files
+├── 📂 scritps/               # Python Scripts Files
+│   ├── chatbot.py           # Core Chatbot Logic (LLM, FAQ, Sentiment, Category)
+│   ├── faq_loader.py        # Loads FAQ Data into MongoDB
+│   ├── vector_db.py         # ChromaDB for FAQ Embeddings
 │   ├── config.py            # Global Configuration
 │   ├── streaming.py         # Streamlit Configuration
 │   ├── utils.py             # Utility Functions
 │
 ├── 📂 deployment/             # Deployment Configurations
 │   ├── Dockerfile            # Docker Configuration
-
+|
 ├── .env                      # Environment Variables (API Keys, DB Config)
 ├── requirements.txt          # Python Dependencies for Streamlit & Backend
 ├── main.py                   # Entry Point for Streamlit App
 ├── README.md                 # Project Overview & Instructions
-├── vercel.json               # Deployment Config for Vercel (Optional)
-├── Dockerfile                # Docker Deployment Config (Optional)
 └── .gitignore                # Ignore Unnecessary Files
 ```
 
