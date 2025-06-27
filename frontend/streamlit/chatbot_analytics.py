@@ -1,6 +1,5 @@
 import streamlit as st
 import os, sys, pandas as pd, plotly.express as px, plotly.graph_objects as go
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 import scripts.utils as utils
 import scripts.config as CONFIG
 from scripts.chatbot import get_chatbot_response, connect_mongo
