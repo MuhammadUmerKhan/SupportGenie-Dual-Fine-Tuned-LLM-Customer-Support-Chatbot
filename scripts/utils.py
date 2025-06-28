@@ -102,15 +102,21 @@ def load_finetuned_mistral():
         bnb_4bit_compute_dtype=torch.float16,
         bnb_4bit_use_double_quant=False,
     )
-    
+
+    # Load tokenizer
     tokenizer = AutoTokenizer.from_pretrained("Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned")
+
+    # Load model in 4-bit to fit in Colab GPU
     model = AutoModelForCausalLM.from_pretrained(
         "Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned",
-        device_map="cpu",
+        quantization_config=bnb_config,
+        device_map="auto",
         trust_remote_code=True
     )
+
+    # Create inference pipeline
+    pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, max_length=512, device_map="auto")
     
-    pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, max_length=512, temperature=0.7)
     return pipe
 
 def get_chatbot_response(user_input):
