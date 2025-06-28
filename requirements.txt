@@ -19,3 +19,4 @@ accelerate
 trl
 peft
 datasets
+streamlit
