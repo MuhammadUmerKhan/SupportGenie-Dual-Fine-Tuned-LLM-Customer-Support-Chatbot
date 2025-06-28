@@ -7,7 +7,6 @@ In today's fast-paced digital world, businesses need **efficient and scalable** 
 
 💡 **What makes SupportGenie unique?**
 - 💬 **AI-Powered Chatbot**: Combines FAQ retrieval with responses from a fine-tuned **Mistral-7B-Instruct-v0.3** for accurate, banking-specific answers.
-- 🌍 **Multilingual Support**: Detects input language, processes in English, and responds in the user’s language.
 - 😊 **Sentiment Analysis**: Classifies interactions as **positive**, **negative**, or **neutral** to understand customer emotions.
 - ⚡ **FAISS Vector Search**: Enables fast and accurate FAQ retrieval using semantic embeddings.
 - 💾 **MongoDB Integration**: Stores chat history, feedback, and analytics for continuous learning.
