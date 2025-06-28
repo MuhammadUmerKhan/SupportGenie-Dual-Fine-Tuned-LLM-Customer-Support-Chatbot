@@ -151,7 +151,7 @@ The fine-tuning process was conducted to adapt **Mistral-7B-Instruct-v0.3** for 
        model.push_to_hub("Muhammad-Umer-Khan/SupportGenie-Mistral-7B", use_temp_dir=False)
        tokenizer.push_to_hub("Muhammad-Umer-Khan/SupportGenie-Mistral-7B", use_temp_dir=False)
        ```
-     - The dataset was also uploaded to `[FAQs-Mistral-7b-v03-17k](https://huggingface.co/datasets/Muhammad-Umer-Khan/FAQs-Mistral-7b-v03-17k)` using a similar process:
+     - The dataset was also uploaded to [FAQs-Mistral-7b-v03-17k](https://huggingface.co/datasets/Muhammad-Umer-Khan/FAQs-Mistral-7b-v03-17k) using a similar process:
      - The repository includes the reformatted dataset, model weights, and configuration files for reproducibility.[](https://docs.mistral.ai/guides/finetuning/)
 
 7. **Integration into Project**:
