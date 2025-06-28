@@ -119,7 +119,7 @@ def load_finetuned_mistral():
     
     return pipe
 
-def get_chatbot_response(user_input):
+def get_fined_tuned_chatbot_response(user_input):
     try:
         model_pipe = load_finetuned_mistral()
         prompt = f"<s>[INST] {user_input} [/INST]"
