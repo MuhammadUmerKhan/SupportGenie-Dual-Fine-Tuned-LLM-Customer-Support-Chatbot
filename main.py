@@ -16,6 +16,7 @@ page = st.sidebar.radio("Select Page", ["🏠 Home", "💬 Chatbot", "🔧 Fine 
 
 # Home Page
 if page == "🏠 Home":
+
     st.markdown("<h1 style='text-align: center; color: #FFA500;'>🤖 AI Customer Support System</h1>", unsafe_allow_html=True)
     st.markdown("""
     ## 🌟 Welcome to the AI-Powered Customer Support System!
@@ -24,6 +25,7 @@ if page == "🏠 Home":
     ---
     ### 🚀 **Key Features:**
     - **💬 Smart AI Chatbot:** Answers customer queries using a mix of **predefined FAQs & AI-generated responses**.
+    - **🔧 Fine-Tuned LLM:** Leverages a custom-trained language model for more accurate and context-specific responses.
     - **📊 Analytics Dashboard:** Gain insights into customer interactions, trends, and engagement.
     - **🧠 Sentiment Analysis:** Tracks and categorizes customer emotions (Positive, Negative, Neutral).
     - **📅 Time-Based Engagement Tracking:** Analyze **peak user activity hours** for better customer support.
@@ -33,13 +35,14 @@ if page == "🏠 Home":
     ### 🔍 **How It Works:**
     - 1️⃣ **User asks a question** 💬
     - 2️⃣ The chatbot **retrieves the best-matching FAQ answer** 🔍
-    - 3️⃣ If no match is found, **AI generates a dynamic response** 🧠
+    - 3️⃣ If no match is found, **AI or fine-tuned LLM generates a dynamic response** 🧠
     - 4️⃣ The system **analyzes sentiment & classifies the question category** 📊
     - 5️⃣ All interactions are stored for future **trend analysis & reporting** 📈
     
     ---
     ### 🛠 **How to Use It:**
     - **Go to the Chatbot Page** 🗨️ → Ask any question and get real-time responses.
+    - **Explore the Fine-Tuned Bot Page** 🔧 → Experience enhanced responses with our custom-trained LLM.
     - **Explore the Analytics Dashboard** 📊 → Visualize customer trends and insights.
     - **Track Sentiment Over Time** 📅 → Understand customer emotions and engagement.
     
@@ -48,10 +51,10 @@ if page == "🏠 Home":
     - ✅ **Faster Response Times:** AI-driven support for instant answers.
     - ✅ **Better Customer Insights:** Learn what customers are talking about.
     - ✅ **Improved Business Decisions:** Make data-driven improvements to services.
-    - ✅ **Enhanced User Experience:** Provide **personalized & engaging** interactions.
+    - ✅ **Enhanced User Experience:** Provide **personalized & engaging** interactions with fine-tuned LLM capabilities.
     
     ---
-    **Ready to get started? Head over to the Chatbot & Analytics sections now!** 🚀
+    **Ready to get started? Head over to the Chatbot, Fine-Tuned Bot, & Analytics sections now!** 🚀
     """)
     st.image("https://cdn-icons-png.flaticon.com/512/3203/3203165.png", width=600)
 
