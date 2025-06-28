@@ -163,7 +163,7 @@ The fine-tuning process was conducted to adapt **Mistral-7B-Instruct-v0.3** for 
   - Size: ~1,000 question-answer pairs.
   - Content: Covers banking topics such as account management, loans, security, and payments.
   - Format: CSV with columns for questions and answers.
-- **Reformatted Dataset ([FAQs-Mistral-7b-v03-17k](https://huggingface.co/datasets/Muhammad-Umer-Khan/FAQs-Mistral-7b-v03-17k))**:
+- **Reformatted Dataset [FAQs-Mistral-7b-v03-17k](https://huggingface.co/datasets/Muhammad-Umer-Khan/FAQs-Mistral-7b-v03-17k)**:
   - Size: 17,000 instruction-response pairs.
   - Augmentation: Synthetic data generated using GPT-4 and self-reflection techniques to expand the dataset, ensuring coverage of diverse banking scenarios.
   - Format: JSONL, with each entry containing a `prompt` (user query wrapped in `[INST]` and `[/INST]`) and a `response` (answer).
