@@ -12,7 +12,7 @@ st.set_page_config(page_title="AI Customer Support System", page_icon="🤖", la
 # Sidebar Navigation
 st.sidebar.image("https://cdn-icons-png.flaticon.com/512/295/295128.png", width=100)
 st.sidebar.title("📌 Navigation")
-page = st.sidebar.radio("Select Page", ["🏠 Home", "💬 Chatbot", "📶 Analytics Dashboard", "📖 FAQs"])
+page = st.sidebar.radio("Select Page", ["🏠 Home", "💬 Chatbot", "🔧 Fine Tuned Bot", "📶 Analytics Dashboard", "📖 FAQs"])
 
 # Home Page
 if page == "🏠 Home":
@@ -59,7 +59,8 @@ if page == "🏠 Home":
 elif page == "💬 Chatbot":
     # chatbot_ui.chatbot()          # Uncomment these lines to use API instead of direct function calls
     chatbot_analytics.chatbot()
-
+elif page == "🔧 Fine Tuned Bot":
+    chatbot_analytics.finetuned_chatbot()
 # Analytics Dashboard Page
 elif page == "📶 Analytics Dashboard":
     # analytics_ui.analytics()      # Uncomment these lines to use API instead of direct function calls
