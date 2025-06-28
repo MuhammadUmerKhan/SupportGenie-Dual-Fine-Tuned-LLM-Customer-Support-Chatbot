@@ -60,7 +60,7 @@ elif page == "💬 Chatbot":
     # chatbot_ui.chatbot()          # Uncomment these lines to use API instead of direct function calls
     chatbot_analytics.chatbot()
 elif page == "🔧 Fine Tuned Bot":
-    chatbot_analytics.finetuned_chatbot()
+    chatbot_analytics.show_finetuned_llm_details()
 # Analytics Dashboard Page
 elif page == "📶 Analytics Dashboard":
     # analytics_ui.analytics()      # Uncomment these lines to use API instead of direct function calls
