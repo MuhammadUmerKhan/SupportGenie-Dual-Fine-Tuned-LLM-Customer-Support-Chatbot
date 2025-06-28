@@ -1,8 +1,9 @@
 # Import required libraries
-import re, streamlit as st  # Streamlit for building UI
+import re, streamlit as st, torch  # Streamlit for building UI
 from streamlit.logger import get_logger  # Streamlit's built-in logger
 from dotenv import load_dotenv
 from langchain_huggingface import HuggingFaceEmbeddings
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndBytesConfig
 from langchain_groq import ChatGroq
 import scripts.config as CONFIG
 load_dotenv()  # ✅ Load environment variables from .env
@@ -90,6 +91,37 @@ def configure_vector_embeddings():
         vector_embeddings (HuggingFaceEmbeddings): The loaded vector embeddings.
     """
     return HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")  # Load and return the vector embeddings
+
+# ✅ Load Fine-Tuned Mistral LLM from Hugging Face
+@st.cache_resource
+def load_finetuned_mistral():
+    # Use BitsAndBytes for quantized loading
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.float16,
+        bnb_4bit_use_double_quant=False,
+    )
+    
+    tokenizer = AutoTokenizer.from_pretrained("Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned")
+    model = AutoModelForCausalLM.from_pretrained(
+        "Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned",
+        device_map="cpu",
+        trust_remote_code=True
+    )
+    
+    pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, max_length=512, temperature=0.7)
+    return pipe
+
+def get_chatbot_response(user_input):
+    try:
+        model_pipe = load_finetuned_mistral()
+        prompt = f"<s>[INST] {user_input} [/INST]"
+        result = model_pipe(prompt)[0]['generated_text']
+        return result.replace(prompt, '').strip()
+    except Exception as e:
+        logger.error(f"Model inference failed: {e}")
+        return "Sorry, I encountered an issue while generating the response."
 
 def sync_st_session():
     """

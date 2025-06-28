@@ -11,3 +11,11 @@ mangum
 langchain-huggingface
 langchain-groq
 tf-keras
+torch
+transformers
+sentencepiece
+bitsandbytes
+accelerate
+trl
+peft
+datasets
