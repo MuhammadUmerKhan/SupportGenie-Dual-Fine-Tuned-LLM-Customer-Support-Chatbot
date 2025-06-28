@@ -208,26 +208,8 @@ The fine-tuning process adapts **Mistral-7B-Instruct-v0.3** for banking-specific
 
 ---
 
-## 🌐 **Deployment**
-1. **Streamlit Cloud** ☁️  
-   - Push to GitHub.  
-   - Deploy via [Streamlit Cloud](https://streamlit.io/cloud).
 
-2. **Docker** 🐳  
-   - Build image:  
-     ```bash
-     docker build -t muhammadumerkhan/supportgenie .
-     ```
-   - Run container:  
-     ```bash
-     docker run -p 8501:8501 muhammadumerkhan/supportgenie
-     ```
-   - Pull from Docker Hub:  
-     ```bash
-     docker pull muhammadumerkhan/supportgenie
-     ```
-
-3. **FastAPI Server** 🖥️  
+1. **FastAPI Server** 🖥️  
    ```bash
    uvicorn api.api:app --host 0.0.0.0 --port 8000 --reload
    ```
