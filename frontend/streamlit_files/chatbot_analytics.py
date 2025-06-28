@@ -130,9 +130,12 @@ def show_finetuned_llm_details():
     Loss dropped from ~2.3 to ~1.6, showing improved performance.
 
     #### 🔹 7. Save & Push to Hugging Face
-    Saved LoRA adapter weights and tokenizer to `Mistral-FAQs-Lora`. Pushed to `Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned` on Hugging Face Hub.
     """)
-
+    
+    st.markdown("""
+    Saved LoRA adapter weights and tokenizer to Mistral-FAQs-Lora. Pushed to <a href="https://huggingface.co/Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned">Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned</a> on Hugging Face Hub.
+    """, unsafe_allow_html=True)
+    
     st.divider()
 
     st.markdown("### ⚙️ Inference Prompt Format")
@@ -145,16 +148,15 @@ def show_finetuned_llm_details():
 
     st.divider()
 
-    st.markdown("### 🚀 Try it Out on Colab (Live Demo)")
+    st.markdown("""### 🚀 Try it Out on Colab (<a href="https://colab.research.google.com/drive/16iHfv2kjpw8qza44_AdCHA-kLiV5nu_j?usp=sharing">Live Demo</a>)""", unsafe_allow_html=True)
     st.markdown("""
-    [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/your_colab_link_here)
+    [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/16iHfv2kjpw8qza44_AdCHA-kLiV5nu_j?usp=sharing)
 
     Test the model on Colab with:
     - ✅ One-click environment setup
     - ✅ 4-bit model loading
     - ✅ Interactive prompt-based testing
     - ✅ Option to input custom questions
-    Replace `your_colab_link_here` with the actual notebook link.
     """)
 
     st.divider()
@@ -174,7 +176,7 @@ def show_finetuned_llm_details():
     📊 **Result**: The model delivers accurate, FAQ-style responses for customer support queries, with training loss reduced from ~2.3 to ~1.6. Lightweight LoRA adapters enable efficient deployment.
     """)
 
-    st.success("📌 Run the model on Colab to test or extend it for your use case!")
+    st.success("📌 Run the model on **Colab** to test or extend it for your use case!")
 
 # Function to Run FAQ Page
 def faq_page():
