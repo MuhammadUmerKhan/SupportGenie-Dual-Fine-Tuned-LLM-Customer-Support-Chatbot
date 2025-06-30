@@ -135,7 +135,7 @@ The fine-tuning process adapts **Mistral-7B-Instruct-v0.3** for banking-specific
 
 6. **Pushing to Hugging Face** 🌐  
    - Authenticated via `huggingface-cli login`.  
-   - Created repository: [Muhammad-Umer-Khan/SupportGenie-Mistral-7B](https://huggingface.co/Muhammad-Umer-Khan/SupportGenie-Mistral-7B).  
+   - Created repository: [Muhammad-Umer-Khan/SupportGenie-Mistral-7B](https://huggingface.co/Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned).  
    - Pushed model and tokenizer to Hugging Face Hub.  
    - Uploaded dataset to [FAQs-Mistral-7b-v03-17k](https://huggingface.co/datasets/Muhammad-Umer-Khan/FAQs-Mistral-7b-v03-17k).
 
