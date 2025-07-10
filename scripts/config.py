@@ -10,11 +10,9 @@ try:
     dotenv.load_dotenv()
 
     # ✅ Load API Key & Model Name
-    GROK_API_KEY = os.getenv("GROK_API_KEY")
-    if not GROK_API_KEY:
-        logger.warning("⚠️ GROK_API_KEY is missing. Some features may not work.")
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-    MODEL_NAME = "qwen-2.5-32b"
+    MODEL_NAME = "qwen/qwen3-32b"
 
     # ✅ Load FAQ File Path
     FAQ_PATH = os.path.join("..", "FAQS", "BankFAQs.csv")  # Ensure path is correct

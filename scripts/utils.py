@@ -9,6 +9,11 @@ import scripts.config as CONFIG
 load_dotenv()  # ✅ Load environment variables from .env
 
 
+# Check if API key is available
+if not CONFIG.GROQ_API_KEY:
+    st.error("❌ Missing API Token!")
+    st.stop()  # Stop execution if API token is missing
+
 # Initialize logger for tracking interactions and errors
 logger = get_logger("LangChain-Chatbot")
 
