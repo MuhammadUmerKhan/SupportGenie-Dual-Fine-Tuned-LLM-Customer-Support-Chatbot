@@ -110,8 +110,6 @@ Please listen to the recorded message and follow the instructions while entering
 
     st.markdown("### 🛠️ Step-by-Step Fine-Tuning Process")
 
-    st.markdown("### 🛠️ Step-by-Step Fine-Tuning Process")
-
     st.markdown("""
     #### 🔹 1. Dataset Preparation
     Loaded `BankFAQs.csv` with 1,764 Q&A pairs, cleaned missing values, and reformatted into Mistral’s instruction format. Converted to a Hugging Face `Dataset` and saved as JSONL.
