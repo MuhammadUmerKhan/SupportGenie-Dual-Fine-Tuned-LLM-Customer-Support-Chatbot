@@ -196,17 +196,17 @@ The fine-tuning process adapts **Mistral-7B-Instruct-v0.3** and **LLaMA-3-8B-Ins
 4. **Set Up API Keys** 🔑  
    - Add Grok API key to `.env`:  
      ```ini
-     GROK_API_KEY=your_grok_api_key
+     GROQ_API_KEY=your_grok_api_key
      ```
 
 5. **Load Fine-Tuned LLMs** 🧠  
-   - Use **[Muhammad-Umer-Khan/SupportGenie-Mistral-7B](https://huggingface.co/Muhammad-Umer-Khan/SupportGenie-Mistral-7B)**:  
+   - Use **[Muhammad-Umer-Khan/SupportGenie-Mistral-7B](https://huggingface.co/Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned)**:  
      ```python
      from transformers import AutoModelForCausalLM, AutoTokenizer
      model = AutoModelForCausalLM.from_pretrained("Muhammad-Umer-Khan/SupportGenie-Mistral-7B")
      tokenizer = AutoTokenizer.from_pretrained("Muhammad-Umer-Khan/SupportGenie-Mistral-7B")
      ```
-   - Use **[Muhammad-Umer-Khan/SupportGenie-LLaMA-3-8B](https://huggingface.co/Muhammad-Umer-Khan/SupportGenie-LLaMA-3-8B)**:  
+   - Use **[Muhammad-Umer-Khan/SupportGenie-LLaMA-3-8B](https://huggingface.co/Muhammad-Umer-Khan/Llama-3-8B-FAQs-Finetuned)**:  
      ```python
      from transformers import AutoModelForCausalLM, AutoTokenizer
      model = AutoModelForCausalLM.from_pretrained("Muhammad-Umer-Khan/SupportGenie-LLaMA-3-8B")
