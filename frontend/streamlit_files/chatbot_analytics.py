@@ -53,21 +53,23 @@ def finetuned_chatbot():
         utils.display_msg(bot_response, "assistant")  # Store bot's response in chat history
 
 def show_finetuned_llm_details():
-    st.markdown("<h1 style='text-align: center; color: #FFA500;'>🧠 Fine-Tuned Mistral-7B: Intelligent FAQ Assistant</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #FFA500;'>🧠 Fine-Tuned LLaMA 3 & Mistral-7B: Intelligent FAQ Assistants</h1>", unsafe_allow_html=True)
 
     st.warning("""
-    ❗ Due to high GPU memory requirements (~15GB VRAM) and limited storage on free hosting platforms (e.g., Gradio, Streamlit, Hugging Face Spaces), this fine-tuned model **cannot be deployed directly online**.  
-    👉 Run it on Google Colab with 4-bit quantization for smooth performance.
+    ❗ Due to high GPU memory requirements (~15GB VRAM) and limited storage on free hosting platforms (e.g., Gradio, Streamlit, Hugging Face Spaces), these fine-tuned models **cannot be deployed directly online**.  
+    👉 Run them on Google Colab with 4-bit quantization for smooth performance.
     """)
 
     st.markdown("""
-    This project showcases a **fine-tuned Mistral-7B-Instruct-v0.3** model, tailored to serve as an **FAQ assistant** for customer support in domains like banking. The model was enhanced using **QLoRA** (4-bit quantization with LoRA adapters) on Google Colab’s T4 GPU, enabling efficient training on limited resources.
+    This project showcases **fine-tuned LLaMA-3-8B-Instruct** and **Mistral-7B-Instruct-v0.3** models, tailored as **FAQ assistants** for customer support in domains like banking. Both models were enhanced using **QLoRA** (4-bit quantization with LoRA adapters) on Google Colab’s T4 GPU, enabling efficient training on limited resources.
 
     ---
     ### 📌 Model Overview
-    - **Base Model**: [`mistralai/Mistral-7B-Instruct-v0.3`](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
-    - **Fine-Tuned Model**: [`Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned`](https://huggingface.co/Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned)
-    - **Architecture**: Decoder-only transformer (Mistral)
+    - **LLaMA 3 Base Model**: [`meta-llama/Meta-LLaMA-3-8B-Instruct`](https://huggingface.co/meta-llama/Meta-LLaMA-3-8B-Instruct)
+    - **LLaMA 3 Fine-Tuned Model**: [`Muhammad-Umer-Khan/LLaMA-3-8B-FAQs-Finetuned`](https://huggingface.co/Muhammad-Umer-Khan/LLaMA-3-8B-FAQs-Finetuned)
+    - **Mistral Base Model**: [`mistralai/Mistral-7B-Instruct-v0.3`](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
+    - **Mistral Fine-Tuned Model**: [`Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned`](https://huggingface.co/Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned)
+    - **Architecture**: Decoder-only transformers (LLaMA and Mistral)
     - **Fine-Tuning Method**: QLoRA (4-bit quantization + LoRA adapters)
     - **Quantization**: 4-bit `nf4` using `bitsandbytes`
     - **Libraries**: `transformers`, `peft`, `trl`, `datasets`, `accelerate`, `huggingface_hub`
@@ -78,29 +80,35 @@ def show_finetuned_llm_details():
 
     st.markdown("### 🧾 Dataset Used")
     st.markdown("""
-    A custom dataset of **1,764 question-answer pairs** was created from banking FAQs, covering topics like security, loans, and fund transfers. It was reformatted into the **Mistral instruction format** for fine-tuning.
+    A custom dataset of **1,764 question-answer pairs** was created from banking FAQs, covering topics like security, loans, and fund transfers. It was reformatted for both LLaMA and Mistral instruction formats.
     - **Original Dataset**: [`Muhammad-Umer-Khan/FAQ_Dataset`](https://huggingface.co/datasets/Muhammad-Umer-Khan/FAQ_Dataset) (raw CSV)
-    - **Reformatted Dataset**: [`Muhammad-Umer-Khan/FAQs-Mistral-7b-v03-17k`](https://huggingface.co/datasets/Muhammad-Umer-Khan/FAQs-Mistral-7b-v03-17k) (JSONL with Mistral format)
-    - **Format Example**:
+    - **Reformatted Dataset for LLaMA**: [`Muhammad-Umer-Khan/FAQs-Meta-Llama-3-8B-Instruct`](https://huggingface.co/datasets/Muhammad-Umer-Khan/FAQs-Meta-Llama-3-8B-Instruct) (JSONL with LLaMA format)
+    - **Reformatted Dataset for Mistral**: [`Muhammad-Umer-Khan/FAQs-Mistral-7b-v03-17k`](https://huggingface.co/datasets/Muhammad-Umer-Khan/FAQs-Mistral-7b-v03-17k) (JSONL with Mistral format)
+    - **LLaMA Format Example**:
     """)
     st.code("""
-[
-  {
-    "text": "<s>[INST] Do I need to enter ‘#’ after keying in my Card number/ Card expiry date/ CVV number [/INST] Please listen to the recorded message and follow the instructions while entering your card details. </s>"
-  },
-  {
-    "text": "<s>[INST] How can I obtain an IVR Password [/INST] By Sending SMS request: Send an SMS 'PWD<space>last 4 digits of your card no.' to 97171 80808 from your registered mobile number. </s>"
-  }
-]
-    """, language="json")
+<|begin_of_text|><|user|>
+Do I need to enter ‘#’ after keying in my Card number/ Card expiry date/ CVV number
+<|assistant|>
+Please listen to the recorded message and follow the instructions while entering your card details.
+<|end_of_text|>
+    """, language="plaintext")
+    st.markdown("""
+    - **Mistral Format Example**:
+    """)
+    st.code("""
+<s>[INST] Do I need to enter ‘#’ after keying in my Card number/ Card expiry date/ CVV number [/INST] Please listen to the recorded message and follow the instructions while entering your card details. </s>
+    """, language="plaintext")
     st.markdown("""
     - ✅ Cleaned by removing missing values.
-    - ✅ Formatted into `<s>[INST] question [/INST] answer </s>` for Mistral compatibility.
+    - ✅ Formatted into respective instruction formats.
     - ✅ Saved as JSONL and uploaded to Hugging Face Hub.
     - ✅ Used training split with 1,764 samples for supervised fine-tuning.
     """)
 
     st.divider()
+
+    st.markdown("### 🛠️ Step-by-Step Fine-Tuning Process")
 
     st.markdown("### 🛠️ Step-by-Step Fine-Tuning Process")
 
@@ -131,28 +139,32 @@ def show_finetuned_llm_details():
 
     #### 🔹 7. Save & Push to Hugging Face
     """)
-    
     st.markdown("""
-    Saved LoRA adapter weights and tokenizer to Mistral-FAQs-Lora. Pushed to <a href="https://huggingface.co/Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned">Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned</a> on Hugging Face Hub.
+    Saved LoRA adapter weights and tokenizers for both models. Pushed to:
+    - LLaMA: <a href="https://huggingface.co/Muhammad-Umer-Khan/LLaMA-3-8B-FAQs-Finetuned">Muhammad-Umer-Khan/LLaMA-3-8B-FAQs-Finetuned</a>
+    - Mistral: <a href="https://huggingface.co/Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned">Muhammad-Umer-Khan/Mistral-7b-v03-FAQs-Finetuned</a>
     """, unsafe_allow_html=True)
-    
+
     st.divider()
 
-    st.markdown("### ⚙️ Inference Prompt Format")
-    st.code("<s>[INST] your question here [/INST]", language="html")
+    st.markdown("### ⚙️ Inference Prompt Formats")
     st.markdown("""
-    - `[INST]` signals the start of the user’s question.
-    - The model generates the answer, and the tokenizer adds `</s>` to close the response.
+    - **LLaMA Format**: `<|begin_of_text|><|user|>\n your question here <|assistant|>\n`
+    - **Mistral Format**: `<s>[INST] your question here [/INST]`
+    """)
+    st.markdown("""
     - Ensures structured, FAQ-style responses for customer queries.
     """)
 
     st.divider()
 
-    st.markdown("""### 🚀 Try it Out on Colab (<a href="https://colab.research.google.com/drive/16iHfv2kjpw8qza44_AdCHA-kLiV5nu_j?usp=sharing">Live Demo</a>)""", unsafe_allow_html=True)
+    st.markdown("### 🚀 Try it Out on Colab")
     st.markdown("""
-    [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/16iHfv2kjpw8qza44_AdCHA-kLiV5nu_j?usp=sharing)
-
-    Test the model on Colab with:
+    - **Mistral & LLaMA Demo**: <a href="https://colab.research.google.com/drive/1_XijXkhLfuTMmpfkluWJXmRa7oPsFfuH?usp=sharing">Check them out!</a>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("""
+    **Test with:**
     - ✅ One-click environment setup
     - ✅ 4-bit model loading
     - ✅ Interactive prompt-based testing
@@ -163,7 +175,7 @@ def show_finetuned_llm_details():
 
     st.markdown("### 🔬 Final Training Configuration & Results")
     st.markdown("""
-    - **Tokenizer**: MistralTokenizer
+    - **Tokenizers**: LLaMA and Mistral tokenizers
     - **Batch Size**: 8
     - **Gradient Accumulation**: 4
     - **Epochs**: 1
@@ -171,12 +183,42 @@ def show_finetuned_llm_details():
     - **Quantization**: 4-bit `nf4` via `bitsandbytes`
     - **LoRA Parameters**: `r=8`, `lora_alpha=16`, `lora_dropout=0.1`, targeting `q_proj`, `v_proj`
     - **Memory Optimization**: Gradient checkpointing, garbage collection
-    - **Dataset**: 1,764 Q&A pairs in Mistral format
+    - **Dataset**: 1,764 Q&A pairs in respective formats
 
-    📊 **Result**: The model delivers accurate, FAQ-style responses for customer support queries, with training loss reduced from ~2.3 to ~1.6. Lightweight LoRA adapters enable efficient deployment.
+    📊 **Results**: Both models deliver accurate responses. LLaMA loss: ~1.49; Mistral loss: ~1.78. Mistral excels in concise, factual answers; LLaMA in fluency.
     """)
 
-    st.success("📌 Run the model on **Colab** to test or extend it for your use case!")
+    st.success("📌 Run the models on **Colab** to test or extend for your use case!")
+
+    st.markdown("<h3 style='text-align: center; color: #FFA500;'>✅ Overall Recommendation: Which Model Performed Better?</h3>", unsafe_allow_html=True)
+    st.markdown("""
+    **🏆 Winner: Mistral 7B** — for FAQ-style banking chatbot applications.
+
+    ### 🔍 Summary of Evaluation
+    | Factor                       | Verdict                                                                                                                                                   |
+    | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | **Training Loss**            | **LLaMA had lower final training loss (~1.49)** vs Mistral (~1.78), indicating slightly better convergence.                                             |
+    | **Response Quality**         | **Mistral’s responses were more concise, focused, and directly aligned** with the actual FAQ answers. LLaMA often added extra (and sometimes vague) info. |
+    | **Factual Accuracy**         | **Mistral stuck closer to ground truth**, avoiding hallucinations. LLaMA included broad financial explanations, not always needed.                        |
+    | **Answer Structure**         | Mistral gave clean step-wise or bullet answers. LLaMA responses were long-winded, occasionally rambling.                                                  |
+    | **General Language Fluency** | **LLaMA is slightly more fluent**, friendly, and human-like. Great for assistant-style or general-purpose bots.                                           |
+    | **Domain-Specific Use Case** | Mistral clearly performed better in **narrow, factual domains like banking FAQs**.                                                                        |
+    | **Colab Compatibility**      | Both models trained fine on Colab, but **Mistral was more memory-efficient** and inference was faster.                                                    |
+
+    ### 💡 Final Use-Case Based Verdict
+    | Use Case                           | Best Model     | Why                                                                                           |
+    | ---------------------------------- | -------------- | --------------------------------------------------------------------------------------------- |
+    | **Banking FAQ / Customer Support** | ✅ Mistral 7B   | Aligned better with structured answers, factual accuracy, and response conciseness.           |
+    | **General Chat / Help Assistant**  | ✅ LLaMA 3 (8B) | More verbose, polite, and expressive – good for open-ended queries and humanlike interaction. |
+
+    ### 📌 What You Should Do
+    * ✅ **Use Mistral 7B** as your primary model for SupportGenie (FAQ Chatbot).
+    * ✅ **Keep LLaMA 3 as a fallback** for general or unexpected queries to add flexibility.
+    * 🧠 You can even **hybrid both**: Use Mistral for strict FAQ match, and route to LLaMA when response confidence is low or FAQ not found.
+
+    ### 🌟 Why I Chose Mistral
+    I chose Mistral 7B because its responses were more accurate and better aligned with the actual FAQ answers compared to LLaMA 3, which often included unnecessary details and was less concise.
+    """, unsafe_allow_html=True)
 
 # Function to Run FAQ Page
 def faq_page():
