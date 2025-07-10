@@ -238,6 +238,11 @@ The fine-tuning process adapts **Mistral-7B-Instruct-v0.3** and **LLaMA-3-8B-Ins
 
 ---
 
+## 🧐 **Test Fine Tuned LLMs**
+ - Try at **[Notebook](https://colab.research.google.com/drive/1_XijXkhLfuTMmpfkluWJXmRa7oPsFfuH?usp=sharing)** 👈
+
+---
+
 ## 📢 **Shoutout**
 Big thanks to **[MrJay10](https://github.com/MrJay10/banking-faq-bot/blob/master/BankFAQs.csv)** for the FAQ dataset! 🙌 🎉
 
