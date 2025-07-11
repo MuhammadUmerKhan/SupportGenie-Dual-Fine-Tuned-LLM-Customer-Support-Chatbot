@@ -177,8 +177,8 @@ The fine-tuning process adapts **Mistral-7B-Instruct-v0.3** and **LLaMA-3-8B-Ins
 ## ⚙️ **Setup and Installation**
 1. **Clone Repository** 📂  
    ```bash
-   git clone https://github.com/your-repo/AI-Powered-Customer-Support-System.git
-   cd AI-Powered-Customer-Support-System
+   git clone https://github.com/MuhammadUmerKhan/SupportGenie-Dual-Fine-Tuned-LLM-Customer-Support-Chatbot.git
+   cd SupportGenie-Dual-Fine-Tuned-LLM-Customer-Support-Chatbot
    ```
 
 2. **Install Dependencies** 📦  
