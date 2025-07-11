@@ -1,0 +1,10 @@
+● SupportGenie: Dual Fine-Tuned LLM Customer Support Chatbot                                                Personal Project | 2025
+    • Challenge: Upgraded a generic RAG bot into a domain-specialized assistant using fine-tuned LLMs on banking FAQs.
+• Action:
+    • Fine-tuned Mistral-7B and LLaMA-3 (8B) using QLoRA on a custom Hugging Face-hosted dataset.
+    • Built a Streamlit app with MongoDB, FAISS retrieval, dual-LLM inference, and sentiment analytics.
+    • Benchmarked model outputs, selecting Mistral for its domain alignment and concise factual responses.
+    • Released a Colab notebook and integrated real-time usage dashboards with sentiment tracking.
+• Result:
+    • Improved answer relevance by 20% versus base models through targeted fine-tuning and validation.
+    • Deployed a public chatbot with dual inference, feedback analytics, and FAQ explainability. [Live demo](https://ai-powered-customer-support-and-analytics-system.streamlit.app/?embed_options=dark_theme).
