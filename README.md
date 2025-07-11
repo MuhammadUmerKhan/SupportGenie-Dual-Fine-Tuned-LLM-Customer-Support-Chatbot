@@ -90,10 +90,10 @@ SupportGenie uses **AI, NLP, and analytics** to automate and enhance customer in
 
 | Visualization Type | Insights |
 |--------------------|----------|
-| **Most Frequent Questions** | ![Feature Importance](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/imgs/most_fre_ques.png) |
-| **Sentiments Over Time** | ![Sentiment Over Time](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/imgs/sent_ovr_time.png) |
-| **Sentiment Trend** | ![Sentiment Trend](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/imgs/sent_trend.png) |
-| **Sentiment Distribution** | ![Sentiment Distribution](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/imgs/sentiment_distribution.png) |
+| **Most Frequent Questions** | ![Feature Importance](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/assets/most_fre_ques.png) |
+| **Sentiments Over Time** | ![Sentiment Over Time](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/assets/sent_ovr_time.png) |
+| **Sentiment Trend** | ![Sentiment Trend](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/assets/sent_trend.png) |
+| **Sentiment Distribution** | ![Sentiment Distribution](https://raw.githubusercontent.com/MuhammadUmerKhan/AI-Powered-Customer-Support-and-Analytics-System/main/assets/sentiment_distribution.png) |
 
 ---
 
